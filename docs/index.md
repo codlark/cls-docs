@@ -1,64 +1,27 @@
-# brikWork
-brikWork is a scripty asset maker for board games. brikWork turns text based layout files into assets using Qt6.
+# Introduction to brikWork
+brikWork is a scripty card game maker that runs on the desktop. Text based layout files are combined with images and a data table to make cards that are exported as images or pdf files. 
 
-Use brikWork to make cards and things for print-n-play games, for testing with Table Top Simulator, or to add a little flair to your favorite table top rpg.
+## Features
+ - CSS-like syntax familiar to any programmer
+ - Easy to learn and powerful placement system that allows positions to be specified from any direction, and relative to other elements
+ - Unitized numbers in pixels, inches, millimeters and more
+ - Text with complex character support, preliminary testing shows Arabic and Devanagari work but I'd love to hear from people who actually use these alphabets
+ - Text can be structured and contextually styled with html
+ - Beginner friendly documentation that doesn't expect you to already know how things work
+ - Layouts can specify other layouts as templates and use their settings and elements
+ - A suite of "briks" that allow you to program your layouts with utilities like condition testing, substrings, and math
 
-brikWork is still in development and may contain bugs or have breaking changes in the future.
 
+## How it works
+Write a layout file like this one
 
-Current features
-
- * combine text, images, and shapes
- * render unicode compliant text with HTML markup and styling
- * specify layouts and customize each asset with scripting functionality
- * define sizes and location in pixels, inches, or millimeters
- * export to pdf or images
-
-Planned features
-
- * more shapes and better colors
- * gradients
- * vs code plugin for syntax highlighting
-
-## brikWork layouts in brief
-
-A layout file is a simple text file with an optional section of CSV data at the end that gets turned into a set of assets. Data from the CSV data is available to the layout to generate distinct assets. A layout is made of elements and those elements have properties that are set to values, including a programming utility called briks.
-
-## brikWork layouts in longer
-
-A layout file is a simple text file with sections for the layout properties and the elements
 ```
-layout {
-    width: 2.5in
-    height: 3.5in
-}
-title {
-    text: This is a [capitalize| [title] ] card!
-    x: center
-    y: 1in
-}
-image {
-    source: [image]
-    x: center
-    y: center
-}
+example layout file
 ```
-Layout files can also have CSV formatted data
-```
-data {
-image, title
-images/smile.png, smiley face
-}
-```
-For each row in the data a new asset will be generated, with the data from that row available as a brik with the name of the corresponding header.
-Briks are the programing utility within values. Briks can be variables like `[title]`, or they can be functions like `[capitalize| ]` .
+in your favorite editor -- there's a [plugin for VS Code](link to plugin) -- and run it in the brikWork app to see how it looks.
 
-For more in depth information check out any of the pages in the nav bar. If you have questions post them to the forum on the itch.io page at [codlark.itch.io/brikwork](codlark.itch.io/brikwork).
+    image of the brikWork app with the above example in the preview
 
+From there you can export your cards to individual images, a texture image for Table Top Simulator, or a PDF for print and play.
 
-## Conventions used in this guide
-
-* Any text meant to be text the user enters in a layout file will have `code styling` this includes numbers like `0` and text like `this`
-* Briks are always presented with their square brackets, and functions with their first vertical bar like `[rowIndex]` and `[if| ]`
-* Property values and function brik arguments are presented in ALL CAPS when being defined like `[lower| STRING ]`
-
+Download brikWork from the home page at []() then take a look at the Getting Started page.

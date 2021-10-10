@@ -39,4 +39,4 @@ If the start is further into the string than the end, an empty string will be re
     [slice | abcdefg | -1| 1]
 gets ""
 
-To sumerize, use `substr` if you know how long of a sting to get and `slice` for everything else.
+To summarize, use `substr` if you know how long of a sting to get and `slice` for everything else.

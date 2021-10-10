@@ -10,7 +10,7 @@ These properties affect the layout and how assets are generated. These are manda
 
  * `width: WIDTH` width of the asset. Unit can be `px`, `in`, or `mm`.
  * `height: HEIGHT` height of the asset. Unit can be `px`, `in`, or `mm`. The `width` and `height` values must use the same unit.
- * `name: FILENAME` - pattern to use for generating names of assets. If no briks are featured `[assetIndex]` will be added to the beginning of the name. This is the only layout property that evaluates briks.
+ * `name: FILENAME` - pattern to use for generating names of assets. If no briks are featured `[asset-index]` will be added to the beginning of the name. This is the only layout property that evaluates briks.
 
 These properties are optional:
 
@@ -20,7 +20,7 @@ These properties are optional:
  * `dpi: DPI` ratio to convert inches to pixels. Default value is `300` meaning 300 pixels per inch. Also affects millimeters. Number must be bare (no unit).
  * `csv: DIALECT` - dictates how to process csv data, both the `data` section and the `data` property. Can be one of
     * `brikWork` - the dialect described in [Syntax](../Syntax/). This is the default value.
-    * `excel` - the dialect exported by speadsheet programs like Microsoft Excel and Google Sheets. This is a strict dialect and not recommended for hand written data, but is crucial for CSV data exported by those programs.
+    * `excel` - the dialect exported by spread sheet programs like Microsoft Excel and Google Sheets. This is a strict dialect and not recommended for hand written data, but is crucial for CSV data exported by those programs.
 
 ## PDF properties
 
@@ -49,7 +49,7 @@ These properties are common to all elements. With the exception of the `type` pr
  * `y: Y` - `x` and `y` can be one of:
     * A number with units `px`, `in`, or `mm`, either positive or negative. This positions the element's upper left to its container's upper left. This is considered the standard positioning scheme.
     * A number with units `px`, `in`, or `mm`, and with the sign `^`. This positions the element's lower right to its container's lower right. An example of this is given in the playing card example.
-    * A number with unit `%` which positions the element realative to its container in the same direction, eg `x: 50%` will position the left edge of the element in the middle of its container going left-right. Can only be positive.
+    * A number with unit `%` which positions the element relative to its container in the same direction, eg `x: 50%` will position the left edge of the element in the middle of its container going left-right. Can only be positive.
     * `center` which centers the element within its container.
   Default value for both `x` and `y` is `0`
  * `width: WIDTH` 
@@ -57,7 +57,7 @@ These properties are common to all elements. With the exception of the `type` pr
     * A number with units `px`, `in`, or `mm`, either positive or negative.
     * A number with unit`%` which sizes the element to a ratio of its container, eg `width: 50%` will make an element half the width of its container. Can only be positive.
   Default value for both `width` and `height` is `1/4in`
- * `rotation: ANGLE` - the rotation of the element in degrees. Elements are rotated about their center. Rotation also affects the location and rotation of contained elements.  The default value is `0deg`. Unit is `deg`. Can be positve or negative.
+ * `rotation: ANGLE` - the rotation of the element in degrees. Elements are rotated about their center. Rotation also affects the location and rotation of contained elements.  The default value is `0deg`. Unit is `deg`. Can be positive or negative.
  * `draw: TOGGLE` - whether to draw the object. If `false` the element, and any contained elements, will not be drawn.
 
 
