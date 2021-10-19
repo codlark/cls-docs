@@ -8,19 +8,21 @@ markdown_extensions:
   - nl2br
   - admonition
 
-#nav:
-#  - ./index.md
-#  - ./Example.md
-#  - ./Syntax.md
-#  - ./Using.md
-#  - 'Reference':
-#    - ./Properties.md
-#    - ./Values.md
-#    - ./Briks.md
-#    - ./Templates.md
-#  - ./Glossary.md
-#  - ./changelog.md
-#  - 'Home Page': 'https://codlark.itch.io/brikwork'
+nav:
+  - ./index.md
+  - 'Tutorial':
+    - ./Tutorial.md
+    - ./Tutorial2.md
+  - 'Reference':
+    - ./Special-Sections.md
+    - ./Export-Section.md
+    - ./Elements-and-Properties.md
+    - ./Briks.md
+    - ./Glossary.md
+  - 'Technical Stuff':
+    - ./Syntax.md
+    - ./changelog.md
+  - 'Home Page': 'https://codlark.itch.io/brikwork'
 
 theme:
   name: readthedocs

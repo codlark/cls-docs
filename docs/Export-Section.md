@@ -1,12 +1,15 @@
-# Export Sections
+# Export Section
 Exporting cards produced by brikWork is controlled by the `export` section and its subsections, each one controlling a different export target. These targets are:
  - `bulk` - this target exports cards to individual images
  - `pdf` - this target exports the cards to a pdf, useful print and play
  - `tts` - this target exports the cards into an image suitable for Tabletop Simulator
 
-The `export` section and subsections use property: value format. There are two properties common to all export targets:
+The `export` section and subsections use property: value format. These properties common to all export targets:
+
+ - `output: FOLDER-PATH` - output folder for exporting cards. Default value is `[]` which uses the same folder as the layout folder.
  - `name: NAME` - the name to use when generating the files. Each export target handles the name differently due to each target saving different kinds of files.
- - `include-bleed: TOGGLE` - whether to include the bleed zone when exporting cards. Default value is `yes` for `bulk` export targets and `no` for all others.
+ - `include-bleed: TOGGLE` - whether to include the bleed area when exporting cards. Default value is `yes` for `bulk` export targets and `no` for all others.
+
 Additionally the `export` section acts like the `defaults` section, but for export targets
 
     export {
@@ -27,7 +30,7 @@ The `bulk` subsection contains properties for exporting cards to individual imag
 The `pdf` subsection controls the exporting process for PDF files.
 
  - `name: NAME` - the name to save the PDF as. The file extension will always be converted to `.pdf`. Default value is `[]` which gives the pdf the same name as the layout file.
- - `margin: XMARGIN(, YMARGIN)` - the page margin. Cards will not be put in the margin. If `YMARGIN` is left off `XMARGIN` will be used for both. Unit is one of `in` or `mm`. Unit for both must be the same. Default value for both is `.25in`, most printers lose accuracy when closer than this to the edge of the page.
+ - `margin: X-MARGIN(, Y-MARGIN)` - the page margin. Cards will not be put in the margin. If `Y-MARGIN` is left off `X-MARGIN` will be used for both. Unit is one of `in` or `mm`. Unit for both must be the same. Default value for both is `.25in`, most printers lose accuracy when closer than this to the edge of the page.
  - `border: WIDTH` the width to draw a border around the cards with. If `0` no border will be drawn. A value of `1mm` will be appear on screen but not when printed. Unit is one of `in` or `mm`. Default value is `0.01in`
  - `page-size: SIZE` the size of the page. Default value is `letter`. Must be one of: 
      - `letter` - which is 8 1/2 by 11 inches or

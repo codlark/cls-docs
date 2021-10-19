@@ -19,7 +19,7 @@ brikWork makes use of two types of properties, single properties which take a si
  - `keep-ratio: yes` is a single property
  - `font: 1/4in, Impact, red` is a composite property
 
-Composite properties are all made up of single properties, `font` above is made up of `font-size`, `font-family`, and `font-color`. Not all single properties are a part of a composite property, `keep-ratio` for example is only available alone. As a rule, composite properties are recommended over single properties when available. 
+Composite properties are all made up of single properties, `font` above is made up of `font-size`, `font-family`, and `font-color`. Not all single properties are a part of a composite property, `keep-ratio` for example is only available alone. As a guideline, composite properties are recommended over single properties when available, but sometimes single properties offer better readability when using briks.
 
 Some composite properties will be listed after their separate single properties, this will happen when the values are different types. When the values are the same type, the composite property will be listed alone and merely state it's a composite property, in these cases the single properties are named for the value names shown in the description, so `size: X, Y` can be broken down into `x` and `y`.
 
@@ -79,7 +79,7 @@ These are only some of the tags available, for a fuller explanation of these and
 ## The Image Elements
 There are two image element types, `image` and `image-box`, which are suited to different use cases. They both share these properties.
 
- - `source: SOURCE` - the image file to load. Most common file types are recognized, but png is recommended because it's not a lossy format. Default value is `[]`, no image.
+ - `source: SOURCE-PATH` - the image file to load. Most common file types are recognized, but png is recommended because it's not a lossy format. Default value is `[]`, no image.
  - `keep-ratio: TOGGLE` - whether to keep the image's original aspect ratio when resizing the image. Default value is `yes`.
  - `scale: SCALE-WIDTH(, SCALE-HEIGHT)` - percentage to scale image by. Unit is `%`. Composite property. Default value is `0` which means no scaling takes place. If `SCALE-HEIGHT` is left off `SCALE-WIDTH` is used for both directions.
 
@@ -118,7 +118,7 @@ All shapes share the following properties:
 
 The `rectangle` type has one additional property:
 
- - `radius: X-RADIUS(, Y-RADIUS)` - this property controls the rounding of the corners of a rectangle. Unit is one of `px`, `in`, or `mm`. Composite property. Default value is `0, 0` which is no rounding. If `Y-RADIUS` is left off `X-RADIUS` is used for both directions.
+ - `corner-radius: X-CORNER-RADIUS(, Y-CORNER-RADIUS)` - this property controls the rounding of the corners of a rectangle. Unit is one of `px`, `in`, or `mm`. Composite property. Default value is `0, 0` which is no rounding. If `Y-CORNER-RADIUS` is left off `X-CORNER-RADIUS` is used for both directions.
 
 The `circle` and `ellipse` type has one additional property:
 
