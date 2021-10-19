@@ -24,14 +24,14 @@ In this example the `pdf` and `tts` export sections will export cards as `cards.
 ## The `bulk` Export Target
 The `bulk` subsection contains properties for exporting cards to individual images.
 
- - `name: NAME` the name to use when saving the individual images. If no briks are present in `NAME` the brik `[card-index]` will be added to the front. Default value is `[card-index]card.png`.
+ - `name: NAME` - the name to use when saving the individual images. If no briks are present in `NAME` the brik `[card-index]` will be added to the front. Default value is `[card-index]card.png`.
 
 ## The `pdf` Export Target
 The `pdf` subsection controls the exporting process for PDF files.
 
  - `name: NAME` - the name to save the PDF as. The file extension will always be converted to `.pdf`. Default value is `[]` which gives the pdf the same name as the layout file.
  - `margin: X-MARGIN(, Y-MARGIN)` - the page margin. Cards will not be put in the margin. If `Y-MARGIN` is left off `X-MARGIN` will be used for both. Unit is one of `in` or `mm`. Unit for both must be the same. Default value for both is `.25in`, most printers lose accuracy when closer than this to the edge of the page.
- - `border: WIDTH` the width to draw a border around the cards with. If `0` no border will be drawn. A value of `1mm` will be appear on screen but not when printed. Unit is one of `in` or `mm`. Default value is `0.01in`
+ - `border: WIDTH` - the width to draw a border around the cards with. If `0` no border will be drawn. A value of `1mm` will be appear on screen but not when printed. Unit is one of `in` or `mm`. Default value is `0.01in`
  - `page-size: SIZE` the size of the page. Default value is `letter`. Must be one of: 
      - `letter` - which is 8 1/2 by 11 inches or
      - `A4` - which is 297 by 210 millimeters

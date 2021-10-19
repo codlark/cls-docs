@@ -38,7 +38,7 @@ All elements share these properties.
  - `size: WIDTH, HEIGHT` - the size of the element. Both `WIDTH` and `HEIGHT` must be present. Default value for both is `1/4in`. Composite property. Allowed values are any of
      - A number with  units `px`, `in`, or `mm`.
      - A number with unit `%`, which sizes the element relative to its container.
- - 'angle: ANGLE' - the rotation of the element in degrees, with or without the unit `deg`. Can be positive which rotates clockwise or negative which rotates counter-clockwise. Elements rotate around there center. If a container is rotated, elements contained within are positioned according to that rotation. Default value is `0deg`.
+ - `angle: ANGLE` - the rotation of the element in degrees, with or without the unit `deg`. Can be positive which rotates clockwise or negative which rotates counter-clockwise. Elements rotate around there center. If a container is rotated, elements contained within are positioned according to that rotation. Default value is `0deg`.
  - `draw: TOGGLE` - whether to draw this element, also affects any elements contained within. Default value is `yes`.
 
 ## The `text` Element
@@ -113,7 +113,7 @@ All shapes share the following properties:
      - `dots`
      - `dash-dot`
      - `dot-dash`
- - `line: LINE-WIDTH, LINE-COLOR(, LINE-STYLE)- this is the composite property for the above 3 properties.
+ - `line: LINE-WIDTH, LINE-COLOR(, LINE-STYLE)` - this is the composite property for the above 3 properties.
  - `fill-color: FILL-COLOR` - the color on the inside of a shape. Default value is `white`.
 
 The `rectangle` type has one additional property:

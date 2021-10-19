@@ -14,6 +14,7 @@ The `layout` section follows the standard property: value format.
  - `size: WIDTH, HEIGHT` - size of the card. Default value is `1in` for both values. Unit can be one of `px`, `in`, or `mm`.
  - `bleed: BLEED-WIDTH(, BLEED-HEIGHT)` - bleed area for the card. Bleed refers to area that is printed but not seen in a final copy. Unit can be one of `px`, `in`, or `mm`. Default value is `0, 0`
  - `dpi: DPI` - dots (pixels) per inch used when converting inches and millimeters to pixels. Default value is `300`. No units are used for this number.
+ - `template: LAYOUT-PATH` - another layout to load is as a template. All properties and sections from the template will be overwritten by this layout. Any elements in the template will be drawn first before any elements defined by this layout.
  - `data: FILE-PATH` - external data table to use, instead of the `data` section. Default value is `[]` which uses the `data` section.
  - `csv: DIALECT` - dialect of csv to use for parsing the data table. Default value is `brikWork`. Can be one of: 
      - `brikWork` - the native dialect used by brikWork, as described in [Syntax](../Syntax/), which works well for hand written data.

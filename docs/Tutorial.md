@@ -1,4 +1,4 @@
-# Chapter 1
+# Basic Layout
 This tutorial will explain the basics of brikWork by working through a simple set of role cards for a game of Werewolf.
 
 To get started download and install brikWork, and open up your favorite code editor. If you don't already have a code editor, I recommend VS Code, by Microsoft. There's an official language plugin for VS Code that'll make it easier to write layouts, just look for it in the extension marketplace.
@@ -55,9 +55,9 @@ Elements are parts of a layout, these can be text, images, or simple shapes. Eac
 
 ## The Text Element
 
-The first thing we should put on a card is the title, so lets look at a text element.
+The first thing we should put on a card is the role, so let's look at a text element.
 
-    title {
+    role {
         type: text
         position: center, .5in
         size: 1.5in, .25in
@@ -67,12 +67,12 @@ The first thing we should put on a card is the title, so lets look at a text ele
         text: [capitalize| [role] ]
     }
 
-That looks like a lot, but lets break it down so we can see what it's all doing.
+That looks like a lot, but let's break it down so we can see what it's all doing.
 
-    title {
+    role {
         type: text
 
-This creates the element, which will be named "title", and be of type `text`, which as you may guess is an element type that draws text.
+This creates the element, which will be named "role", and be of type `text`, which as you may guess is an element type that draws text.
 
         position: center, .5in
         size: 1.5in, .25in
@@ -131,7 +131,7 @@ Theoretically, we could stop here, all we need to do is tell players what role t
         source: images/[role].png
     }
 
-This should all make sense by now. The only new thing is the `source` property that tells us where the image is located. We don't need to specify a size because brikWork will use the image at full size at default.
+This should all make sense by now. The only new thing is the `source` property that tells us where the image is located. We don't need to specify a size because brikWork will use the image at full size by default.
 
 These images come with brikWork in the examples folder.
 
@@ -178,7 +178,7 @@ Let's take a look at the cards, but first a look at the layout file all together
         dark-red = #a32b1d
     }
 
-    title {
+    role {
         type: text
         position: center, .5in
         size: 1.5in, .25in
