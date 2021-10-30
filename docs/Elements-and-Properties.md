@@ -109,10 +109,8 @@ All shapes share the following properties:
  - `line-color: LINE-COLOR` - the color of the line. Default is `black`.
  - `line-style: LINE-STYLE` - the style of the line. Default is `solid`. Allowed values are:
      - `solid`
-     - `dash`
      - `dots`
-     - `dash-dot`
-     - `dot-dash`
+     - `dash`
  - `line: LINE-WIDTH, LINE-COLOR(, LINE-STYLE)` - this is the composite property for the above 3 properties.
  - `fill-color: FILL-COLOR` - the color on the inside of a shape. Default value is `white`.
 

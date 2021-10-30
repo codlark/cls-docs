@@ -14,6 +14,7 @@ nav:
     - ./Tutorial.md
     - ./Tutorial2.md
   - 'Reference':
+    - ./Quick-Ref.md
     - ./Special-Sections.md
     - ./Export-Section.md
     - ./Elements-and-Properties.md

@@ -102,9 +102,11 @@ Numbers in brikWork are made up of:
 
  - a sign
  - an integer portion
- - a decimal point
  - either 
+     - a decimal point
      - a decimal portion
+ - or
+     - a space or decimal point
      - a fractional portion
  - a unit
 
@@ -120,11 +122,11 @@ Spaces are not allowed in numbers. Examples of numbers include
 
     0
     1.2in
+    44%
     -4.4
-    ^44%
     5
     5.5
-    5.1/2
+    5 1/2
     .5
     1/2
 

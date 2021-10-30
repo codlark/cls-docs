@@ -4,7 +4,7 @@ Exporting cards produced by brikWork is controlled by the `export` section and i
  - `pdf` - this target exports the cards to a pdf, useful print and play
  - `tts` - this target exports the cards into an image suitable for Tabletop Simulator
 
-The `export` section and subsections use property: value format. These properties common to all export targets:
+The `export` section and subsections use property: value format. These properties are common to all export targets:
 
  - `output: FOLDER-PATH` - output folder for exporting cards. Default value is `[]` which uses the same folder as the layout folder.
  - `name: NAME` - the name to use when generating the files. Each export target handles the name differently due to each target saving different kinds of files.
@@ -44,4 +44,4 @@ The `tts` subsection is a specialized export target for Tabletop Simulator, whic
  - `name: NAME` - the name to save the image as. If no file extension is present the extension `.png` will be added. Default value is `[]` which gives the image the same name as the layout file.
  - `size: WIDTH, HEIGHT` - size, in cards, of the generated image. `WIDTH` must be between 2-10 inclusive and `HEIGHT` must be between 2-7 inclusive. Default is `5, 7`; a `WIDTH` of `5` is the max a US poker sized card at 300 dpi can have and keep under the 4096 pixel limit.
 
-If there are more cards than can fit in a single generated image, brikWork will generate multiple images with a number prepended to the front, eg `1cards.png` and `2cards.png`.
+If there are more cards than can fit in a single generated image, brikWork will generate multiple images with a number appended to the front, eg `1cards.png` and `2cards.png`.

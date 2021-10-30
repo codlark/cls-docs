@@ -1,10 +1,10 @@
 # Introduction to brikWork
-brikWork is a scripty card game maker that runs on the desktop. Text based layout files are combined with images and a data table to make cards that are exported as images or pdf files. 
+brikWork is a scripty card game maker that runs on the desktop. Text based layout files are combined with images and a data table to make cards that are exported as images or PDF files. 
 
 ## Features
  - CSS-like syntax familiar to any programmer
  - Easy to learn and powerful placement system that allows positions to be specified from any direction, and relative to other elements
- - Unitized numbers in pixels, inches, millimeters and more
+ - Unitized numbers in pixels, inches, millimeters, and more
  - Text with complex character support, preliminary testing shows Arabic and Devanagari work but I'd love to hear from people who actually use these alphabets
  - Text can be structured and contextually styled with html
  - Beginner friendly documentation that doesn't expect you to already know how things work
@@ -15,13 +15,29 @@ brikWork is a scripty card game maker that runs on the desktop. Text based layou
 ## How it works
 Write a layout file like this one
 
-```
-example layout file
-```
-in your favorite editor -- there's a [plugin for VS Code](link to plugin) -- and run it in the brikWork app to see how it looks.
+    layout {
+        size: 2.5in, 3.5in
+    }
+    label {
+        type: text
+        position: 1in, 1in
+        size: 1in, 1in
+        angle: 180
+        font: 55pt, Segoe Script
+        align: right, bottom
+        text: use <u>html</u>
+    }
+    box {
+        type: rect
+        position: ^1in, ^1in
+        line: 1/8in, #696969
+        fill-color: transparent
+    }
 
-    image of the brikWork app with the above example in the preview
+in your favorite editor (there's a plugin for VS Code) and run it in the brikWork app to see how it looks.
 
-From there you can export your cards to individual images, a texture image for Table Top Simulator, or a PDF for print and play.
+![](./img/index-shot.png)
 
-Download brikWork from the home page at []() then take a look at the Getting Started page.
+From there you can export your cards to individual images, a texture image for Tabletop Simulator, or a PDF for print and play.
+
+Download brikWork from the home page at [codlark.itch.io/brikWork](https://codlark.itch.io/brikwork) then take a look at the [tutorial](../Tutorial/).
