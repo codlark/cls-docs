@@ -1,5 +1,5 @@
 # Syntax
-This page is meant as a thorough, technical explanation of the syntax, parsing, and card generation of brikWork. It is not meant to be a learning tool, rather a reference in the even that something doesn't act as expected.
+This page is meant as a thorough, technical explanation of the syntax, parsing, and card generation of brikWork. It is not meant to be a learning tool, rather a reference in the event that something doesn't act as expected.
 
 ## Top Level Syntax
 
@@ -15,7 +15,7 @@ Section names can contain white space, but it's not recommended. This form is a 
 
 ## Whitespace
 
-Whitespace refers to non visible characters, in the context of brikWork this means spaces and tabs. White space is ignored on boundaries, but left intact within names and values. in the following example, ignored whitespace is left blank, while non-ignored whitespace is marked with `•`.
+Whitespace refers to non visible characters, in the context of brikWork this means spaces and tabs. White space is ignored on boundaries, but left intact within names and values. in the following example, ignored whitespace is left blank, while non-ignored whitespace is marked with a dot `•`.
 
     briks {
         my•name = my•name•is•[ some•column ]
@@ -30,7 +30,7 @@ All sections except for the `briks` section and the `data` section use 'property
         scale: 50%; keep-ratio: yes
         source: img.png}
 
-Some properties are 'composite properties' and some are 'single properties'. Single properties only take a single value and the entirety of text between the colon and the terminus becomes the value. Composite properties take multiple values. The text between the colon and the terminus is divided by commas into separate pieces of text when the property is seen by the parser when the layout is first loaded. Attempting to use a single brik to fill multiple values will result in errors.
+Some properties are 'composite properties' and some are 'single properties'. Single properties only take a single value and the entirety of text between the colon and the terminus becomes the value. Composite properties take multiple values. The text between the colon and the terminus is divided by commas into separate pieces of text when the property is parsed when the layout is first loaded. Attempting to use a single brik to fill multiple values will result in errors.
 
 Properties do not need to be indented within a section, this is merely a convention to make layouts easier to read.
 
@@ -47,7 +47,7 @@ Definition syntax is only allowed within the `briks` special section, and is use
         another color = #769870
     }
 
-Names can contain whitespace.
+Names can contain whitespace, so both names above are valid
 
 ## Data Syntax
 
@@ -73,7 +73,7 @@ Each row will generate a single card. And for each card, the column briks will r
 
 ## Brik Syntax
 
-Briks are the namesake of brikWork, and come in two varieties, variable briks that return text, and function briks take 'arguments' to return a computed text. Briks are a name surrounded by square brackets. In function briks a vertical bar is used to separate the name from the arguments, and the arguments from each other
+Briks are the namesake of brikWork, and come in two varieties, variable briks that return text, and function briks that take 'arguments' to return a computed text. Briks are a name surrounded by square brackets. In function briks a vertical bar is used to separate the name from the arguments, and the arguments from each other
 
     some-element {
         draw: [in| [repeat-index] | 1| 2| 4| 6]
@@ -90,7 +90,7 @@ Comments can appear in any section.
 
 ## Text and Values
 
-Anything provided to property is considered text until it gets processed at card generation time. Text is turned into a value, depending on how a given property processes this text, each time a card is generated. There are two kinds of values, generated values and literal values.
+Anything provided to a property is considered text until it gets processed at card generation time. Text is turned into a value, depending on how a given property processes this text, each time a card is generated. There are two kinds of values, generated values and literal values.
 
 A generated value is any text that contains briks. This includes column briks. Any briks found are resolved into text. If the text contains briks after this, those briks are resolved. This is repeated until there are no more briks found in the text. The text is then treated as a literal value.
 
@@ -106,7 +106,7 @@ Numbers in brikWork are made up of:
      - a decimal point
      - a decimal portion
  - or
-     - a space or decimal point
+     - a space
      - a fractional portion
  - a unit
 
@@ -114,11 +114,11 @@ A sign is one of `+`, `-`, or `^`. If no sign is given the sign of `+` is used. 
 
 The integer and decimal portions are made up of the digits `0` thru `9`; hexadecimal numbers are not allowed. The decimal point and decimal portion are not required for whole numbers. The integer portion is not needed for numbers between 1 and 0 or numbers between 0 and -1.
 
-The fractional portion is made up of a `/` with digits on either side. If a number is just a fractional portion is does not need a decimal point.
+The fractional portion is made up of a `/` with digits on either side.
 
 The allowed units are listed in the property description, with the first listed unit being the default unit used if the number does not have a unit. 
 
-Spaces are not allowed in numbers. Examples of numbers include
+Spaces are only allowed tin numbers to separate an integer portion from a fractional portion<!-- should this change? -->. Examples of numbers include
 
     0
     1.2in
@@ -136,7 +136,7 @@ When numbers are used as arguments to a brik, be it the math brik, the slice bri
 
 ## Toggle Syntax
 
-A toggle is a value that is either true or false, on or off. Multiple values are allowed for each direction to better suit the property. True values are
+A toggle is a value that is either true or false, on or off. Multiple values are allowed for each option to better suit the property. True values are
 
  - `true`
  - `yes`
@@ -150,7 +150,7 @@ False values are:
 
 ## Color Syntax
 
-Colors use the standard hex code format, a pound sign with 6 or 8 hexadecimal numbers after, in the order transparency, red, green, blue, such as `#ff454545` or `#808000`. A collection of named colors are also available, with names taken from the [SVG color keyword names](https://www.w3.org/TR/SVG11/types.html#ColorKeywords) with the addition of `transparent` which is a fully transparent color.
+Colors use the standard hex code format, a pound sign with 6 or 8 hexadecimal numbers after, in the order transparency, red, green, blue, such as `#45454545` or `#808000`. A collection of named colors are also available, with names taken from the [SVG color keyword names](https://www.w3.org/TR/SVG11/types.html#ColorKeywords) with the addition of `transparent` which is a fully transparent color.
 
 ## Strings
 
@@ -171,17 +171,17 @@ Escape | Meaning | Escape | Meaning
 
 Every other character is left alone and passed along without transformation. This includes the semicolon above and the various separators and delimiters described elsewhere. Escapes are transformed after the whitespace is stripped from a value, so a single `\s` would create a value of " ". This can be used to put whitespace at the edge of a value.
 
-When using the brikWork dialect of CSV escape syntax can be used to include a comma in a value.
+The brikWork dialect of CSV escape syntax can be used to include a comma in a value.
 
 ### File Paths
 A file path is a path to a file or folder in the file system. Properties that take paths have their value marked with `-PATH` in their description. Because brikWork uses the same character as Windows uses as a file path separator, the forward slash is also allowed as a file path separator by brikWork, and will be converted as appropriate.
 
-    source: imgages/backgrounds/[type].png
+    source: images/backgrounds/[type].png
 
 # Generation
 
 Generation is the process of turning a parsed layout into cards. If no data is present, only one card will be generated, and the index and total briks will all resolve to `1` or `[]`.
 
-If there is data present, each row will generate at least one card. If the data contains a column named repeat that column must only contain numbers, positive only and no unit, and each row will generate as many cards as specified by the repeat value.
+If there is data present, each row will generate at least one card. If the data contains a column named `repeat` that column must only contain positive numbers with no unit, and each row will generate as many cards as specified by the repeat value.
 
 For each row, each element of the layout is processed. For each element, each property text is turned into a value, then that element is drawn to the card. Cards sit in a buffer until they are exported. Errors in parsing the file, turning text into values, or trying to use values to draw elements, will cause an error to be reported to the user. 
