@@ -1,4 +1,4 @@
-# Basic Layout 2
+# Getting Started 2
 
 In chapter 1 we looked at a simple layout for a set of cards for Werewolf. This chapter will continue working on those cards.
 

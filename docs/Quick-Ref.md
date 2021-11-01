@@ -1,4 +1,4 @@
-# Syntax Quick Ref
+# Quick Ref
 
 This document is meant to show all the syntax of brikWork in a smaller, yet more complete way than the tutorial. It's also easier to read than the full Syntax Reference.
 
@@ -42,6 +42,26 @@ The `export` section and element sections can also feature subsections
         attack {
         }
         defense {
+        }
+    }
+
+## Elements
+
+There are 6 types of elements
+
+ - `text` elements draw text both, simple and complex, and have access to a limited amount of HTML
+ - `image` elements draw images quickly and easily, best when one image will be used on every card
+ - `image-box` elements draw images according to an alignment, best when you have lots of images of different sizes
+ - `rect` elements draw rectangles, this is great for prototyping or drawing a bounding box to see what a given size would be
+ - `circ` elements draw circles
+ - `line` elements draw lines
+
+Elements can also have subelements, which are drawn relative to their parent
+
+    container {
+        subelement {
+            type: text
+            text: I'm drawn from the upper left of my container!
         }
     }
 

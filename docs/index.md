@@ -6,10 +6,11 @@ brikWork is a scripty card game maker that runs on the desktop. Text based layou
  - Easy to learn and powerful placement system that allows positions to be specified from any direction, and relative to other elements
  - Unitized numbers in pixels, inches, millimeters, and more
  - Text with complex character support, preliminary testing shows Arabic and Devanagari work but I'd love to hear from people who actually use these alphabets
- - Text can be structured and contextually styled with html
+ - Text can be structured and contextually styled with HTML
  - Beginner friendly documentation that doesn't expect you to already know how things work
  - Layouts can specify other layouts as templates and use their settings and elements
  - A suite of "briks" that allow you to program your layouts with utilities like condition testing, substrings, and math
+ - Cards can be exported to single images, print ready PDF files, or images for Tabletop Simulator 
 
 
 ## How it works
