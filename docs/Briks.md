@@ -1,7 +1,7 @@
 # Briks
 Briks are the main programming utility in brikWork. They come in 3 main types
 
- * variable briks like `[assetIndex]` that simply return a value
+ * variable briks like `[card-index]` that simply return a value
  * function briks like `[if| ]` that process arguments, and
  * operator briks that perform special parsing for operators on their argument 
 
@@ -12,22 +12,22 @@ The variable briks you'll most likely see are column briks, briks that are fille
 `[]` - the empty brik
 This brik intentionally left blank. Use this brik when you don't want to fill in a value or argument and want to make it clear that the blank space is intentional.
 
-`[rowIndex]` and `[rowTotal]`
-`[assetIndex]` and `[assetTotal]`
-`[repeatIndex]` and `[repeatTotal]`
-These briks return numerical statistics about assets
+`[row-index]` and `[row-total]`
+`[card-index]` and `[card-total]`
+`[repeat-index]` and `[repeat-total]`
+These briks return numerical statistics about cards
 
- * `row` refers to the current row of the data. Assets generated from the first row of data will have a `[rowIndex]` of `1`
- * `asset` refers to the specific asset. The total number of generated assets is in `[assetTotal]`
- * `repeat` refers to the repetitions as defined by a repeat column in the data. `[repeatTotal]` is the same as the repeat value of a given row. If no repeat column is present in the data `[repeatIndex]` and `[repeatTotal]` will both be `1`
- * `Index` refers to the number of the current asset. The second card made from a row will have a `[repeatIndex]` of `2`
- * `Total` refers to the total number of that category. `[rowTotal]` is the total number of rows
+ * `row` refers to the current row of the data. Cards generated from the first row of data will have a `[row-index]` of `1`
+ * `card` refers to the specific card. The total number of generated cards is in `[card-total]`
+ * `repeat` refers to the repetitions as defined by a repeat column in the data. `[repeat-total]` is the same as the repeat value of a given row. If no repeat column is present in the data `[repeat-index]` and `[repeat-total]` will both be `1`
+ * `index` refers to the number of the current card. The second card made from a row will have a `[repeat-index]` of `2`
+ * `total` refers to the total number of that category. `[row-total]` is the total number of rows
 
-These are useful for things like generating "24 out of 50" with `[rowIndex] out of [rowTotal]` where repeated cards are not counted separately. If the layout is being generated without data, these will have an undefined value, they could be one, they could be blank.
+These are useful for things like generating "24 out of 50" with `[row-index] out of [row-total]` where repeated cards are not counted separately. If the layout is being generated without data, these will have an undefined value, they could be one, they could be blank.
 
 ## Function Briks
 
-Function briks can effectivly be divided into two categories, value functions and comparison functions.
+Function briks can effectively be divided into two categories, value functions and comparison functions.
 
 ### Value Functions
 
@@ -53,14 +53,14 @@ Convert the entirety of `STRING` to lowercase.
 
 `[rnd| STOP ]`
 `[rnd| START | STOP ]`
-Generate a random number from `START` upto and including `STOP`. `START` must be a lower number than `STOP`. 
+Generate a random number from `START` up to and including `STOP`. `START` must be a lower number than `STOP`. 
 
 `[s| STRING ]`
 This brik is a shortcut for striking thru text with `<s>STRING</s>` in labels.
 
 `[slice| STRING | START ]`
 `[slice| STRING | START | END ]`
-Select a sub string from `STRING` starting at `START` and ending with `END`. If `END` is not present then the rest of the string will be selected, if it is present the specified character won't be included. If `START` or `END` begins with a `0` that argument will count the first character as `0` the second as `1` and so on, otherwise the first charcter is `1`. Negative numbers are also allowed, which are counted from the end of the string, so `-1` is the last character.
+Select a sub string from `STRING` starting at `START` and ending with `END`. If `END` is not present then the rest of the string will be selected, if it is present the specified character won't be included. If `START` or `END` begins with a `0` that argument will count the first character as `0` the second as `1` and so on, otherwise the first character is `1`. Negative numbers are also allowed, which are counted from the end of the string, so `-1` is the last character.
 
 `[substr| STRING | START | LENGTH ]`
 Select a sub string of `STRING`, starting at `START` for `LENGTH`. If `START` begins with a `0` the first character will count as `0` the second as `1` and so on, other wise the first character is `1`. Negative numbers are not allowed.
@@ -112,9 +112,9 @@ Valid comparison operators are:
 
 When the first character of `TEST` of an `[if| ]` is `?` the rest of the argument will be given to this brik for evaluation.
 ```none
-[if|? [assetIndex] == [assetCount] | Last asset! | Still waiting... ]
+[if|? [card-index] == [card-total] | Last card! | Still waiting... ]
 ```
-This would evaluate to "Last asset!" on the last asset and "Still waiting..." on every other asset.
+This would evaluate to "Last card!" on the last card and "Still waiting..." on every other card.
 
 `[/| VALUE ]` - the expansion brik
 The expansion brik processes and expands escapes. Normally this is the last step of evaluating a value but this brik lets you do it early. As an example, you can use the expansion brik to dynamically generate brik names.
@@ -136,17 +136,17 @@ Accepted operators are:
 
 To provide an example:
 
-    [=| [assetIndex] / [assetTotal] * 100]
+    [=| [card-index] / [card-total] * 100]
 
-This would give `[assetIndex]` as a percent, for example the 21st asset of 34 would be "61.76". We can use this to draw a progress bar as in
+This would give `[card-index]` as a percent, for example the 21st card of 34 would be "61.76". We can use this to draw a progress bar as in
 
-    barHolder {
+    bar-holder {
         ...
         bar {
             type: line
             ...
-            x2: [=| [assetIndex] / [assetTotal] * 100]%
+            x2: [=| [card-index] / [card-total] * 100]%
         }
     }
 
-The element `barHolder` would be as wide as the bar at most, and each asset would have a longer bar than the last.
+The element `bar-holder` would be as wide as the bar at most, and each card would have a longer bar than the last.

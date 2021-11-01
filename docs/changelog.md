@@ -1,6 +1,25 @@
 # Changelog
 This page collects the changes made to brikWork over time
 
+## v 0.6
+### added
+ - composite properties, which take multiple values and pass them off to specific properties. Composite properties are also preferred when available
+ - `export` section with subsections that describe how to export to various targets
+ - `scale` property to `image` and `image-box` element types to control image size proportionately
+ - users can now make function briks. If a user brik uses the briks `[1]`, `[2]`, and so on they'll be filled in by the arguments passed to the brik
+### changed
+ - properties and other names previously in camelCase, like `fontSize` now use hyphen as in `font-size` and `asset-index`
+ - fractional numbers now use a space instead of a decimal point
+### removed
+ - `name` property on `layout` section
+ - dedicated `pdf` section, now merged with new `export` section
+### fixed
+ - rotating `image-box` elements is less surprising
+
+### note
+ - added in 0.5 but not mentioned, a `[rnd| ]` brik
+
+
 ## v 0.5
  - added: `imageBox` element type, which aligns images within its box
  - added: `csv` property to layout that controls what dialect of csv to parse data as

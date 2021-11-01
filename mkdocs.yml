@@ -10,16 +10,19 @@ markdown_extensions:
 
 nav:
   - ./index.md
-  - ./Example.md
-  - ./Syntax.md
-  - ./Using.md
+  - 'Tutorial':
+    - ./Tutorial.md
+    - ./Tutorial2.md
   - 'Reference':
-    - ./Properties.md
-    - ./Values.md
+    - ./Quick-Ref.md
+    - ./Special-Sections.md
+    - ./Export-Section.md
+    - ./Elements-and-Properties.md
     - ./Briks.md
-    - ./Templates.md
-  - ./Glossary.md
-  - ./changelog.md
+    - ./Glossary.md
+  - 'Technical Stuff':
+    - ./Syntax.md
+    - ./changelog.md
   - 'Home Page': 'https://codlark.itch.io/brikwork'
 
 theme:
