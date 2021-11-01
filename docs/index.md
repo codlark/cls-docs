@@ -41,4 +41,4 @@ in your favorite editor (there's a plugin for VS Code) and run it in the brikWor
 
 From there you can export your cards to individual images, a texture image for Tabletop Simulator, or a PDF for print and play.
 
-Download brikWork from the home page at [codlark.itch.io/brikWork](https://codlark.itch.io/brikwork) then take a look at the [tutorial](../Tutorial/).
+Download brikWork from the home page at [codlark.itch.io/brikWork](https://codlark.itch.io/brikwork) then take a look at the [tutorial](./Tutorial/).
