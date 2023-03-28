@@ -1,6 +1,6 @@
 # Quick Ref
 
-This document is meant to show all the syntax of brikWork in a smaller, yet more complete way than the tutorial. It's also easier to read than the full Syntax Reference.
+This document is meant to show all the syntax of CLS in a smaller, yet more complete way than the tutorial. It's also easier to read than the full Syntax Reference.
 
 ## Sections
 
@@ -20,9 +20,9 @@ The value ends either at the end of the line or with a semicolon.
 
 The whitespace (spaces and tabs) around names and values is ignored, so that width will be "1/2in" not " 1/2in". Whitespace within values is kept however.
 
-The `briks` and `data` sections have different contents. The `briks` section uses definition syntax, which is just property syntax using equals instead of colons. See the [briks section page](../Special-Sections/#the-briks-section) for more information. The `data` section uses CSV format, with either standard, excel-style syntax or brikWork syntax which uses escapes to put commas in values, and ignores headers with no name.
+The `macros` and `data` sections have different contents. The `macros` section uses definition syntax, which is just property syntax using equals instead of colons. See the [macros section page](../Special-Sections/#the-macros-section) for more information. The `data` section uses CSV format, with either standard, excel-style syntax or CLS syntax which uses escapes to put commas in values, and ignores headers with no name.
 
-    briks {
+    macros {
         this-thing = some value I guess??
     }
     data {
@@ -65,14 +65,14 @@ Elements can also have subelements, which are drawn relative to their parent
         }
     }
 
-## Briks
+## Macros
 
-Briks feature a name surrounded by square brackets with optional arguments separated by vertical bars.
+Macros feature a name surrounded by square brackets with optional arguments separated by vertical bars.
 
     [column name]
     [substr| [next column] | 1| 1]
 
-Most briks you'll use will likely be column briks or user briks. Briks are evaluated recursively, if a brik returns a brik then that brik will be evaluated too.
+Most macros you'll use will likely be column macros or user macros. Macros are evaluated recursively, if a macro returns a macro then that macro will be evaluated too.
 
 ## Comments
 
@@ -84,7 +84,7 @@ Comments can appear in any section.
 
 ## Values
 
-A value is anything that can be assigned to a property or given to a brik as an argument. Type of values are numbers, toggles, colors, and strings.
+A value is anything that can be assigned to a property or given to a macro as an argument. Type of values are numbers, toggles, colors, and strings.
 
 ### Numbers
 
@@ -97,7 +97,7 @@ Numbers take three basic forms, a whole number, a decimal, or a fraction
     3/4
     1 1/8
 
-Depending on the property or brik, numbers can have signs and units
+Depending on the property or macro, numbers can have signs and units
 
     -45
     1 1/3in
@@ -121,6 +121,18 @@ A color is one of
  - a hex code, either 6 digit #RRGGBB for opaque colors, or ##AARRGGBB for transparent colors
  - a named SVG color name, like `blue` or `yellow`
  - the color `transparent`
+
+### Lists
+
+Lists are used to treat multiple values as a single value, mostly by macros. Lists are surrounded by parentheses and the items are separated by colons. A single colon is used as an empty list if you need it.
+
+    (red: blue: yellow)
+    (single item)
+    ()
+    ([])
+    #those two are the same thing!!
+    :
+    #an empty list
 
 ### Strings
 
@@ -151,4 +163,6 @@ The export target combo box selects which export target you want.
 
 The export button exports the cards according to the export target.
 
-The card is shown on the left, and on the right is a text box for displaying errors. Errors should be readable but if you have trouble trying to decipher them please ask on the brikWork forum, located from the [homepage](https://codlark.itch.io/brikWork).
+The clear cache button on the bottom clears the image cache. The CLS Renderer stores any images that are loaded in to keep impact of the file system low. This button clears that storage so that if you change any images in the file system those changes will be seen next time you regenerate the cards.
+
+The card is shown on the left, and on the right is a text box for displaying errors. Errors should be readable but if you have trouble trying to decipher them please ask on the CLS forum, located from the [homepage](https://codlark.itch.io/CLS).

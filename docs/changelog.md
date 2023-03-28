@@ -1,5 +1,31 @@
 # Changelog
-This page collects the changes made to brikWork over time
+This page collects the changes made to CLS Renderer over time
+
+## v1.0
+The program has been renamed to CLS Renderer, and briks have been renamed macros.
+
+### added
+ - `scale` property on `image` and `image-box` now takes factors with unit `x` in addition to percents. `scale: 2x` is the same as `scale: 200%`
+ - `[switch| ]` macro. The first argument is a test, the rest of the arguments are put into case|result pairs. if test equals a case the result is returned.
+ - A new list value type that looks like `(a:b:c:d)` or `:` for an empty list
+ - New macros, and alterations to existing macros to make use of this new type
+     - `[in| ]` will check if its second argument is a list, and if so will check if the test value is in that list
+     - `[slice| ]` will operate on list items, and will return a list, when passed a list instead of a string
+     - `[for-each| ]` evaluates a body for each item in a list
+     - `[length| ]` returns the length of a list or string
+     - `[args]` is available to user function macros to return all arguments passed to the macro as a list
+ - "Clear Image Cache" button to the interface.
+### changed
+ - the `briks` section has been renamed `macros` as the name brik has been replaced by macro
+ - the `output` property on export sections has been renamed to `destination`
+### fixed
+ - parsing mixed fractions in the math macros now works as intended
+ - using the `[file| ]` macro with a file that doesn't exist/won't open should give a proper error now.
+ - using `^` when the parent is layout and bleed is non zero now works as intended
+ - there was a rounding error when calculating the full size of a card with bleed greater than 0, it's been fixed
+
+### removed
+ - The `[substr| ]` macro has been removed. Use slice instead
 
 ## v 0.6
 ### added

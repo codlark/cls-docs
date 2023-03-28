@@ -1,9 +1,9 @@
 # Special Sections
 
-The special sections control how brikWork operates, these are:
+The special sections control how the CLS Renderer operates, these are:
 
  - `layout` - which holds the settings for the overall layout of the cards and settings for how to interpret values.
- - `briks` - which holds user defined briks.
+ - `macros` - which holds user defined macros.
  - `defaults` - which holds default values for element properties.
  - `data` - which holds the data table used to generate cards.
 
@@ -16,15 +16,15 @@ The `layout` section follows the standard property-value format.
  - `dpi: DPI` - dots (pixels) per inch used when converting inches and millimeters to pixels. Default value is `300`. No units are used for this number.
  - `template: LAYOUT-PATH` - another layout to load in as a template. All properties and sections from the template will be overwritten by this layout. Any elements in the template will be drawn first before any elements defined by this layout.
  - `data: FILE-PATH` - external data table to use, instead of the `data` section. Default value is `[]` which uses the `data` section.
- - `csv: DIALECT` - dialect of csv to use for parsing the data table. Default value is `brikWork`. Can be one of: 
-     - `brikWork` - the native dialect used by brikWork, as described in [Syntax](../Syntax/), which works well for hand written data.
+ - `csv: DIALECT` - dialect of csv to use for parsing the data table. Default value is `CLS`. Can be one of: 
+     - `CLS` - the native dialect used by CLS, as described in [Syntax](../Syntax/), which works well for hand written data.
      - `excel` - the dialect exported by spread sheet programs like Microsoft Excel and Google Sheets. This is a strict dialect and only recommended when using CSV data exported by another program.
 
-## The `briks` Section
+## The `macros` Section
 
-The `briks` section uses a unique syntax to define user briks, which return their defined value. User briks can either be variable briks or function briks. For example:
+The `macros` section uses a unique syntax to define user macros, which return their defined value. User macros can either be variable macros or function macros. For example:
 
-    briks {
+    macros {
         blueish-gray = #8080aa
         the = THE [lower| [1] ]
     }
@@ -38,10 +38,10 @@ Which can be used as
 
     }
 
-When making function briks the arguments passed to the brik are reachable by number as the briks `[1]`, `[2]`, `[3]` and so on. Also available to a function brik is:
+When making function macros the arguments passed to the macro are reachable by number as the macros `[1]`, `[2]`, `[3]` and so on. Also available to a function macro is:
  
- - `[arg-total]` - the number of arguments passed to the brik
- <!--- `[args]` - all the arguments passed to the brik as a list-->
+ - `[arg-total]` - the number of arguments passed to the macro
+ - `[args]` - all the arguments passed to the macro as a list
 
 ## The `defaults` Section
 

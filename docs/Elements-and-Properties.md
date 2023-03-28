@@ -14,12 +14,12 @@ Elements are the building blocks of a layout. Anything that is seen on a card is
  - `none` - this element has nothing to draw, but can contain other elements, have a position, and rotate.
 
 ## Composite Properties
-brikWork makes use of two types of properties, single properties which take a single value, and composite properties which take multiple values separated by commas, for example:
+CLS makes use of two types of properties, single properties which take a single value, and composite properties which take multiple values separated by commas, for example:
 
  - `keep-ratio: yes` is a single property
  - `font: 1/4in, Impact, red` is a composite property
 
-Composite properties are all made up of single properties, `font` above is made up of `font-size`, `font-family`, and `font-color`. Not all single properties are a part of a composite property, `keep-ratio` for example is only available alone. As a guideline, composite properties are recommended over single properties when available, but sometimes single properties offer better readability when using briks.
+Composite properties are all made up of single properties, `font` above is made up of `font-size`, `font-family`, and `font-color`. Not all single properties are a part of a composite property, `keep-ratio` for example is only available alone. As a guideline, composite properties are recommended over single properties when available, but sometimes single properties offer better readability when using macros.
 
 Some composite properties will be listed after their separate single properties when the values are different types. When the values are the same type, the composite property will be listed alone and merely state it's a composite property. In these cases the single properties are named for the value names shown in the description, so `size: X, Y` can be broken down into `x` and `y`.
 
@@ -29,7 +29,7 @@ A small number of composite properties can take optional values, such as `scale:
 
 All elements share these properties.
 
- - `type: TYPE` - the type of the element, as listed above. This must be a literal value like the values used in the special sections; this means that briks will not be evaluated. Default value is `none`.
+ - `type: TYPE` - the type of the element, as listed above. This must be a literal value like the values used in the special sections; this means that macros will not be evaluated. Default value is `none`.
  - `position: X, Y` - the position of the element. Default value for both is `0`. Composite property. Allowed values are any of
      - A number with units `px`, `in`, or `mm`, either positive or negative. This positions the element's upper left to its container's upper left. This is considered the standard positioning scheme.
      - A number with units `px`, `in`, or `mm`, and with the sign `^`. This positions the element's lower right to its container's lower right. This and the above type can be combined, eg `position: 1/4in, ^1/4in` would position an element based on it's lower left.
@@ -66,12 +66,12 @@ All elements share these properties.
 
 ### HTML subset
 
-Because brikWork uses Qt for rendering cards, a subset of HTML is provided for `text` elements, such as:
+Because CLS Renderer uses Qt for rendering cards, a subset of HTML is provided for `text` elements, such as:
  
- - `<b>` bold text, also usable thru the `[b| ]` brik which wraps it's argument in `<b> </b>` tags
- - `<i>` italic text, also usable thru the `[i| ]` brik which wraps it's argument in `<i> </i>` tags
+ - `<b>` bold text, also usable thru the `[b| ]` macro which wraps it's argument in `<b> </b>` tags
+ - `<i>` italic text, also usable thru the `[i| ]` macro which wraps it's argument in `<i> </i>` tags
  - `<font>` allows you to change the font family in the middle of a label
- - `<img>` places images in the text. When used in conjunction with user briks this is a convenient way to add icons to text
+ - `<img>` places images in the text. When used in conjunction with user macros this is a convenient way to add icons to text
 
 These are only some of the tags available, for a fuller explanation of these and more valid HTML, visit the Qt docs for the [Supported HTML Subset](https://doc.qt.io/qt-6/richtext-html-subset.html)
 
@@ -81,7 +81,9 @@ There are two image element types, `image` and `image-box`, which are suited to 
 
  - `source: SOURCE-PATH` - the image file to load. Most common file types are recognized, but png is recommended because it's a lossless format. Default value is `[]`, no image.
  - `keep-ratio: TOGGLE` - whether to keep the image's original aspect ratio when resizing the image. Default value is `yes`.
- - `scale: SCALE-WIDTH(, SCALE-HEIGHT)` - percentage to scale image by. Unit is `%`. Composite property. Default value is `0` which means no scaling takes place. If `SCALE-HEIGHT` is left off `SCALE-WIDTH` is used for both directions.
+ - `scale: SCALE-WIDTH(, SCALE-HEIGHT)` - amount to scale image by. Unit one of `%` or `x`. Composite property. Default value is `0` which means no scaling takes place. If `SCALE-HEIGHT` is left off `SCALE-WIDTH` is used for both directions.
+     - Values with unit `%` are percentages, where `100%` is full size, `50%` is half size, `200%` is double and so on.
+     - Values with unit `x` are factors, where `1x` is full size, `.5x` is half size, `2x` is double and so on. This from is useful for scaling an images based on dpi, eg a 600 dpi images on a 300dpi card might use a scale value of `300/600x`
 
 The `image` type is intended for cases where the same image will be used on every card, or where every image is the same size. This type sets the default size to `0, 0`. The final size to render an image is found with the series of checks below.
  1. If the size is left at the default, and `scale` is left at default, the image is drawn at full size. This is the default behavior.
@@ -101,7 +103,7 @@ The `image-box` type uses a different drawing process than `image`
 
 
 ## The Shape Elements
-brikWork provides basic shapes. While mainly intended to assist in development of layouts, these may also be used, for example, to provide borders in more simple layouts, or to colorize transparent images.
+CLS provides basic shapes. While mainly intended to assist in development of layouts, these may also be used, for example, to provide borders in more simple layouts, or to colorize transparent images.
 
 All shapes share the following properties:
 
