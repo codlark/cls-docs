@@ -23,7 +23,9 @@ nav:
   - 'Technical Stuff':
     - ./Syntax.md
     - ./changelog.md
-  - 'Home Page': 'https://codlark.itch.io/cls'
+  - 'Links':
+    - 'Home Page': 'https://codlark.itch.io/cls'
+    - 'VS Code Extension': 'https://marketplace.visualstudio.com/items?itemName=codlark.CLS-vscode'
 
 theme:
   name: readthedocs

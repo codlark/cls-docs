@@ -144,7 +144,7 @@ These images come with the CLS Renderer in the examples folder.
 The last step before we can make any cards is the `export` section.
 
     export {
-        output: cards
+        destination: cards
         bulk {
             name: [role][repeat-index].png
         }
@@ -172,7 +172,7 @@ Let's take a look at the cards, but first a look at the layout file all together
     }
 
     export {
-        output: cards
+        destination: cards
         bulk {
             name: [role][repeat-index].png
         }

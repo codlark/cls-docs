@@ -104,7 +104,7 @@ Finally, here's everything all together.
     }
 
     export {
-        output: cards
+        destination: cards
         bulk {
             name: [role][repeat-index].png
         }
