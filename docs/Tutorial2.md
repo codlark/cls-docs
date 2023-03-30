@@ -1,4 +1,4 @@
-# Getting Started 2
+# Werewolf Part 2
 
 In chapter 1 we looked at a simple layout for a set of cards for Werewolf. This chapter will continue working on those cards.
 
@@ -165,3 +165,5 @@ And the cards
 <img src="../img/villager2.png" width=338 height=525 /><img src="../img/seer2.png" width=338 height=525 /><img src="../img/werewolf2.png" width=338 height=525 />
 
 Neat! This final card is included with the CLS Renderer in the example folder, so take a look at that if you haven't been following along.
+
+*[CLS]: Card Layout Script

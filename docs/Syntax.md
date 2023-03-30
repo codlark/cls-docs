@@ -197,3 +197,5 @@ Rendering is the process of turning a parsed layout into cards. If no data is pr
 If there is data present, each row will generate at least one card. If the data contains a column named `repeat` that column must only contain positive numbers with no unit, and each row will generate as many cards as specified by the repeat value.
 
 For each row, each element of the layout is processed. For each element, each property text is turned into a value, then that element is drawn to the card. Cards sit in a buffer until they are exported. Errors in parsing the file, turning text into values, or trying to use values to draw elements, will cause an error to be reported to the user. 
+
+*[CLS]: Card Layout Script

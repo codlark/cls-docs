@@ -62,3 +62,5 @@ The element named `box` will have a line that's 50px wide, dotted, and magenta.
 ## The `data` Section
 
 The `data` section contains the data table, and uses CSV syntax. An alternate data table can be provided with the `data` property of the `layout` section. The dialect used to parse the data table is defined by the `csv` property of the `layout` section.
+
+*[CLS]: Card Layout Script

@@ -5,7 +5,7 @@ This page collects the changes made to CLS Renderer over time
 The program has been renamed to CLS Renderer, and briks have been renamed macros.
 
 ### added
- - `scale` property on `image` and `image-box` now takes factors with unit `x` in addition to percents. `scale: 2x` is the same as `scale: 200%`
+ - `scale` property on `image` and `image-box` now takes factors with unit `x` in addition to percentages. `scale: 2x` is the same as `scale: 200%`
  - `[switch| ]` macro. The first argument is a test, the rest of the arguments are put into case|result pairs. if test equals a case the result is returned.
  - A new list value type that looks like `(a:b:c:d)` or `:` for an empty list
  - New macros, and alterations to existing macros to make use of this new type
@@ -18,6 +18,7 @@ The program has been renamed to CLS Renderer, and briks have been renamed macros
 ### changed
  - the `briks` section has been renamed `macros` as the name brik has been replaced by macro
  - the `output` property on export sections has been renamed to `destination`
+ - mixed fractions can have their whole number separated from fraction component with a space, a period, or a slash. These three are all valid: `1 1/2` `1.1/2` `1/1/2`
 ### fixed
  - parsing mixed fractions in the math macros now works as intended
  - using the `[file| ]` macro with a file that doesn't exist/won't open should give a proper error now.

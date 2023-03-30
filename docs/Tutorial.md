@@ -222,3 +222,5 @@ So if we open this in the CLS Renderer and click the Export button we'll get a f
     These cards were given a thin border to make it easier to see their size, your cards will not have this border.
 
 Looks pretty good but we make them better. In the next section of this tutorial we'll look at some more elements types and advanced features.
+
+*[CLS]: Card Layout Script

@@ -130,17 +130,6 @@ When the first character of `TEST` of an `[if| ]` is `?` the rest of the argumen
 
 This would evaluate to "Last card!" on the last card and "Still waiting..." on every other card.
 
-`[/| VALUE ]` - the expansion macro
-The expansion macro processes and expands escapes. Normally this is the last step of evaluating a value but this macro lets you do it early. As an example, you can use the expansion macro to dynamically generate macro names.
-
-    [/| \[ [someMacro] \] ]
-
-Because values are evaluated until there are no more macros, this would end up evaluating a macro with the name of whatever is in `[someMacro]`. Or for a more complex example
-
-    [for-each| (red: blue: yellow) | [/| \[ [item]-icon \] ] ]
-
-This will return `[ red-icon ][ blue-icon ][ yellow-icon ]`, then these macros would be evaluated. This is an advanced macro.
-
 `[=| VALUE ]` - the math macro
 The math macro performs arithmetic. `VALUE` can contain any number of operators and they will be processed according to order of operations. If any operand is not a number parsing will stop with an error. Units are ignored like the comparison macro above. Operators and numbers must be separated with spaces, as in `1 + 2` but not `1+2`.
 Accepted operators are:
@@ -170,3 +159,5 @@ This would give `[card-index]` as a percent, for example the 21st card of 34 wou
     }
 
 The element `bar-holder` holds how long the bar can grow to, and `bar` is the actual progress bar. The same example above would get us a bar that's about an inch and a quarter long.
+
+*[CLS]: Card Layout Script

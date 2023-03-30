@@ -149,7 +149,7 @@ Escape | Meaning | Escape | Meaning
 
 The space and tab escapes are useful for putting whitespace at the edge of a value.
 
-## Using the App
+## Using the Renderer
 
 ![](./img/empty-app.png)
 
@@ -166,3 +166,5 @@ The export button exports the cards according to the export target.
 The clear cache button on the bottom clears the image cache. The CLS Renderer stores any images that are loaded in to keep impact of the file system low. This button clears that storage so that if you change any images in the file system those changes will be seen next time you regenerate the cards.
 
 The card is shown on the left, and on the right is a text box for displaying errors. Errors should be readable but if you have trouble trying to decipher them please ask on the CLS forum, located from the [homepage](https://codlark.itch.io/CLS).
+
+*[CLS]: Card Layout Script

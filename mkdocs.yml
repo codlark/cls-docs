@@ -10,7 +10,7 @@ markdown_extensions:
 
 nav:
   - ./index.md
-  - 'Tutorial':
+  - 'Tutorials':
     - ./Tutorial.md
     - ./Tutorial2.md
   - 'Reference':
@@ -18,7 +18,7 @@ nav:
     - ./Special-Sections.md
     - ./Export-Section.md
     - ./Elements-and-Properties.md
-    - ./Briks.md
+    - ./Macros.md
     - ./Glossary.md
   - 'Technical Stuff':
     - ./Syntax.md

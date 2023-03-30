@@ -46,3 +46,5 @@ in your favorite editor (there's a plugin for VS Code) and give it to the CLS Re
 From there you can export your cards to individual images, a texture image for Tabletop Simulator, or a PDF for print and play.
 
 Download the CLR Renderer from the home page at [codlark.itch.io/CLS](https://codlark.itch.io/CLS) then take a look at the [tutorial](./Tutorial/).
+
+*[CLS]: Card Layout Script

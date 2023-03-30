@@ -27,3 +27,18 @@ There are also a couple extra line styles, `dot-dash` and `dash-dot`.
 ## pdf properties
 
 - `center-in-page: TOGGLE` - if false, the cards are aligned to the left edge. you probably don't want this.
+
+## macros
+
+`[/| VALUE ]` - the expansion macro
+The expansion macro processes and expands escapes. Normally this is the last step of evaluating a value but this macro lets you do it early. As an example, you can use the expansion macro to dynamically generate macro names.
+
+    [/| \[ [someMacro] \] ]
+
+Because values are evaluated until there are no more macros, this would end up evaluating a macro with the name of whatever is in `[someMacro]`. Or for a more complex example
+
+    [for-each| (red: blue: yellow) | [/| \[ [item]-icon \] ] ]
+
+This will return `[ red-icon ][ blue-icon ][ yellow-icon ]`, then these macros would be evaluated.
+
+*[CLS]: Card Layout Script

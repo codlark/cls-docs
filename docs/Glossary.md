@@ -47,3 +47,4 @@ Value
 :   The assigned contents of a property. In `width: 1in` the `1in` is a value.
 :   The term value is also used when referring to the data, where it refers to the specific values available as column macros.
  
+ *[CLS]: Card Layout Script

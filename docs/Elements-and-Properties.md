@@ -128,3 +128,6 @@ The `line` type cannot be rotated or given a size, and has two additional proper
 
  - `start: X, Y` - this property is the same as `position`.
  - `end: X2, Y2` - this property defines the end point of the line. Allowed values are the same as for `position`. Composite property. Default value is `1/4in, 1/4in`, which is also the default for `size`.
+
+
+*[CLS]: Card Layout Script
