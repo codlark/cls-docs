@@ -8,7 +8,7 @@ version: 2
 mkdocs:
   configuration: mkdocs.yml
 
- build:
+build:
   tools:
     python: "3"
 
