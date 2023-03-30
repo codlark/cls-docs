@@ -1,5 +1,5 @@
-site_name: brikWork Docs
-site_url: https://brikwork.readthedocs.io/en/latest/
+site_name: CLS Docs
+site_url: https://cls.readthedocs.io/en/latest/
 
 markdown_extensions:
   - smarty
@@ -10,7 +10,7 @@ markdown_extensions:
 
 nav:
   - ./index.md
-  - 'Tutorial':
+  - 'Tutorials':
     - ./Tutorial.md
     - ./Tutorial2.md
   - 'Reference':
@@ -18,12 +18,12 @@ nav:
     - ./Special-Sections.md
     - ./Export-Section.md
     - ./Elements-and-Properties.md
-    - ./Briks.md
+    - ./Macros.md
     - ./Glossary.md
   - 'Technical Stuff':
     - ./Syntax.md
     - ./changelog.md
-  - 'Home Page': 'https://codlark.itch.io/brikwork'
+  - 'Home Page': 'https://codlark.itch.io/cls'
 
 theme:
   name: readthedocs

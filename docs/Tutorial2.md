@@ -1,10 +1,10 @@
-# Getting Started 2
+# Werewolf Part 2
 
 In chapter 1 we looked at a simple layout for a set of cards for Werewolf. This chapter will continue working on those cards.
 
 ## The Rect Element
 
-brikWork offers some limited elements for drawing shapes. We'll be looking at `rect` but there's also `circle` and `line`. Shapes are great for placeholders until you get final graphics, simple layouts, or colorizing transparent images. The color of the shape and the line used to draw the shapes are also fairly flexible, check out the section on [Element Shapes](../Elements-and-Properties/#the-shape-elements) for more.
+CLS offers some limited elements for drawing shapes. We'll be looking at `rect` but there's also `circle` and `line`. Shapes are great for placeholders until you get final graphics, simple layouts, or colorizing transparent images. The color of the shape and the line used to draw the shapes are also fairly flexible, check out the section on [Element Shapes](../Elements-and-Properties/#the-shape-elements) for more.
 
 So, let's look at a simple border.
 
@@ -110,7 +110,7 @@ Finally, here's everything all together.
         }
     }
 
-    briks {
+    macros {
         dark-red = #a32b1d
     }
 
@@ -164,4 +164,6 @@ And the cards
 
 <img src="../img/villager2.png" width=338 height=525 /><img src="../img/seer2.png" width=338 height=525 /><img src="../img/werewolf2.png" width=338 height=525 />
 
-Neat! This final card is included with brikWork in the example folder, so take a look at that if you haven't been following along.
+Neat! This final card is included with the CLS Renderer in the example folder, so take a look at that if you haven't been following along.
+
+*[CLS]: Card Layout Script

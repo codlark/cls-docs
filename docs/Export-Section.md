@@ -1,12 +1,12 @@
 # Export Section
-Exporting cards produced by brikWork is controlled by the `export` section and its subsections, each one controlling a different export target. These targets are:
+Exporting cards produced by CLS Renderer is controlled by the `export` section and its subsections, each one controlling a different export target. These targets are:
  - `bulk` - this target exports cards to individual images
  - `pdf` - this target exports the cards to a pdf, useful print and play
  - `tts` - this target exports the cards into an image suitable for Tabletop Simulator
 
 The `export` section and subsections use property: value format. These properties are common to all export targets:
 
- - `output: FOLDER-PATH` - output folder for exporting cards. Default value is `[]` which uses the same folder as the layout folder.
+ - `destination: FOLDER-PATH` - destination folder for exporting cards. Default value is `[]` which uses the same folder as the layout folder.
  - `name: NAME` - the name to use when generating the files. Each export target handles the name differently due to each target saving different kinds of files.
  - `include-bleed: TOGGLE` - whether to include the bleed area when exporting cards. Default value is `yes` for `bulk` export targets and `no` for all others.
 
@@ -24,7 +24,7 @@ In this example the `pdf` and `tts` export sections will export cards as `cards.
 ## The `bulk` Export Target
 The `bulk` subsection contains properties for exporting cards to individual images.
 
- - `name: NAME` - the name to use when saving the individual images. If no briks are present in `NAME` the brik `[card-index]` will be added to the front. Default value is `[card-index]card.png`.
+ - `name: NAME` - the name to use when saving the individual images. If no macros are present in `NAME` the macro `[card-index]` will be added to the front. Default value is `[card-index]card.png`.
 
 ## The `pdf` Export Target
 The `pdf` subsection controls the exporting process for PDF files.
@@ -39,9 +39,11 @@ The `pdf` subsection controls the exporting process for PDF files.
 
 
 ## The `tts` Export Target
-The `tts` subsection is a specialized export target for Tabletop Simulator, which expects cards laid out in a grid. Tabletop Simulator also puts specific limits on the size of the image, namely that it must be 2-10 cards wide, 2-7 cards tall, and at max 4096 pixels wide. These are enforced by brikWork.
+The `tts` subsection is a specialized export target for Tabletop Simulator, which expects cards laid out in a grid. Tabletop Simulator also puts specific limits on the size of the image, namely that it must be 2-10 cards wide, 2-7 cards tall, and at max 4096 pixels wide. These are enforced by the CLS Renderer.
 
  - `name: NAME` - the name to save the image as. If no file extension is present the extension `.png` will be added. Default value is `[]` which gives the image the same name as the layout file.
  - `size: WIDTH, HEIGHT` - size, in cards, of the generated image. `WIDTH` must be between 2-10 inclusive and `HEIGHT` must be between 2-7 inclusive. Default is `5, 7`; a `WIDTH` of `5` is the max a US poker sized card at 300 dpi can have and keep under the 4096 pixel limit.
 
-If there are more cards than can fit in a single generated image, brikWork will generate multiple images with a number appended to the front, eg `1cards.png` and `2cards.png`.
+If there are more cards than can fit in a single generated image, the CLS Renderer will generate multiple images with a number appended to the front, eg `1cards.png` and `2cards.png`.
+
+*[CLS]: Card Layout Script
