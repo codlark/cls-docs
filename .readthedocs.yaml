@@ -8,8 +8,10 @@ version: 2
 mkdocs:
   configuration: mkdocs.yml
 
-# Optionally set the version of Python and requirements required to build your docs
 python:
-   version: 3.9
-   install:
-   - requirements: requirements.txt
+  install:
+    - requirements: requirements.txt
+
+ build:
+  tools:
+    python: "3"
