@@ -10,7 +10,7 @@ mkdocs:
 
 build:
   tools:
-    python: "3"
+    python: "3.9"
 
 python:
   install:
