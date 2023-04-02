@@ -13,6 +13,7 @@ nav:
   - 'Tutorials':
     - ./Tutorial.md
     - ./Tutorial2.md
+    - ./Tutorial3.md
   - 'Reference':
     - ./Quick-Ref.md
     - ./Special-Sections.md
