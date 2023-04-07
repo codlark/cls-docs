@@ -69,6 +69,11 @@ Select a sub string from `STRING` starting at `START` and ending with `END`. If 
 `[slice| LIST, START, END]`
 Select a sub list from `LIST`. The `START` and `END` arguments are as above, where `START` is the first item to return.
 
+`[substr| STRING, START, LENGTH]`
+Select a sub string of `STRING`, starting at `START` for `LENGTH`. If `START` begins with a `0` the first character will count as `0` the second as `1` and so on, other wise the first character is `1`. Negative numbers are not allowed.
+
+!!! tip "Examples"
+    Because `[slice| ]` and `[substr| ]` are so similar and so flexible, examples for both are located on  [this page](../Selecting-Strings/).
 
 `[u| STRING]`
 This macro is a shortcut for underlining text with `<u>STRING</u>` in labels.
