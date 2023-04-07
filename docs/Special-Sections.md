@@ -26,14 +26,14 @@ The `macros` section uses a unique syntax to define user macros, which return th
 
     macros {
         blueish-gray = #8080aa
-        the = THE [lower| [1] ]
+        the = THE [lower| [1]]
     }
 
 Which can be used as
 
     some-element {
         ...
-        text: [the| [card-name] ]
+        text: [the| [card-name]]
         font-color: [blueish-gray]
 
     }

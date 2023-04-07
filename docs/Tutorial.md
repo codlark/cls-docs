@@ -66,9 +66,9 @@ The first thing we should put on a card is the role, so let's look at a text ele
         position: center, .5in
         size: 1.5in, .25in
         font: 36pt, Palatino Linotype
-        font-color: [if| [eq| [role] | werewolf ] | [dark-red] | black ]
+        font-color: [if| [eq| [role], werewolf], [dark-red], black]
         align: center, middle
-        text: [capitalize| [role] ]
+        text: [capitalize| [role]]
     }
 
 That looks like a lot, but let's break it down so we can see what it's all doing.
@@ -89,7 +89,7 @@ These lines position and size the element. We want it centered horizontally and 
 Fractions and decimals are equivalent, some numbers are easier in one or the other, like `1/8` or `0.3`. For this tutorial we'll be using decimals everywhere.
 
         font: 36pt, Palatino Linotype
-        font-color: [if| [eq| [role] | werewolf ] | [dark-red] | black ]
+        font-color: [if| [eq| [role], werewolf ], [dark-red], black]
         align: center, middle
 
 The `font` property sets the size and name of the font, and optionally the color of the font. For readability I've split the color out. The `align` property positions the text within its defined size. As for that `font-color`, it's our first look at macros and we're gonna take it inside out.
@@ -98,15 +98,15 @@ The `font` property sets the size and name of the font, and optionally the color
 
 This is easy, the `[role]` pulls the value of the `role` column for this card/row.
 
-    [eq| [role] | werewolf ]
+    [eq| [role], werewolf ]
 
-Macros use vertical bars to separate the name of the function from it's arguments, and arguments from each other. Whenever you see a vertical bar in a macro it means it's performing extra computation on it's value. In the case of the `[eq| ]` macro here, if its arguments are the same, it returns (turns into) `true`, or otherwise returns `false`.
+Macros use vertical bars to separate the name of the function from it's arguments, and commas to separate arguments from each other. Whenever you see a vertical bar in a macro it means it's performing extra computation on it's value. In the case of the `[eq| ]` macro here, if its arguments are the same, it returns (turns into) `true`, or otherwise returns `false`.
 
-    font-color: [if| [eq| [role] | werewolf ] | [dark-red] | black ]
+    font-color: [if| [eq| [role], werewolf ], [dark-red], black]
 
 This is the whole value. The `[if| ]` macro takes as it's first value a true or false value, called a toggle in CLS, and if it's true it returns the second argument, or the third argument it's false. So this value checks if the role of the current card is `werewolf`, and if it is the font color is made `[dark-red]`, or if it's some other role the font color is made `black`. There are a fair number of macros which are listed [here](../Macros/). 
 
-        text: [capitalize| [role] ]
+        text: [capitalize| [role]]
 
 Lastly, the text that will actually be drawn on the card. Compared to our last macro, this is pretty easy; it just capitalizes the first letter of `[role]`. 
 
@@ -187,9 +187,9 @@ Let's take a look at the cards, but first a look at the layout file all together
         position: center, .5in
         size: 1.5in, .25in
         font: 36pt, Palatino Linotype
-        font-color: [if| [eq| [role] | werewolf ] | [dark-red] | black ]
+        font-color: [if| [eq| [role], werewolf ], [dark-red], black]
         align: center, middle
-        text: [capitalize| [role] ]
+        text: [capitalize| [role]]
     }
 
     icon {

@@ -1,6 +1,17 @@
 # Changelog
 This page collects the changes made to CLS Renderer over time
 
+## v1.1
+
+### added
+ - added back `[substr| ]`, just because it makes more sense for some things.
+
+### changed
+ - Changed the licensing to the Mozilla Public License 2.0
+ - Syntax for macros has been changed. The seperator between arguments is now the comma, the vertical bar is still used is seperate the function name form the arguments, for example `[eq| [role], werewolf]` from the werewolf example.
+ - Syntax for lists has changed. Values are now separated by commas, as in `(red, red, blue)`
+ - lists can now be used with `[switch| ]`. When a list is used as a case value, the macro will checck if the test is in the list. Check the docs for more.
+
 ## v1.0
 The program has been renamed to CLS Renderer, and briks have been renamed macros.
 

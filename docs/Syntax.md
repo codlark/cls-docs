@@ -73,13 +73,13 @@ Each row will generate a single card. And for each card, the column macros will 
 
 ## Macro Syntax
 
-Macros come in two varieties, variable macros that return text, and function macros that take arguments to return a computed text. Macros are a name surrounded by square brackets. In function macros a vertical bar is used to separate the name from the arguments, and the arguments from each other
+Macros come in two varieties, variable macros that return text, and function macros that take arguments to return a computed text. Macros are a name surrounded by square brackets. In function macros a vertical bar is used to separate the name from the arguments, and commas are used to separate the arguments from each other.
 
     some-element {
-        draw: [in| [repeat-index] | 1| 2| 4| 6]
+        draw: [in| [repeat-index], 1, 2, 4, 6]
     }
 
-By convention, spaces are not put around names, but are put around arguments, with the exception of numbers, where a space is only put before literal numbers.
+By convention, spaces are not put around names.
 
 ## Comments
 A comment is a line of text that is ignored by the parser. Comments must be on their own line and their first non whitespace character must be a pound.
@@ -132,7 +132,7 @@ Spaces are only allowed in numbers to separate an integer portion from a fractio
 
 When numbers are used as arguments to a macro, be it the math macro, the slice macro, or any other, units are ignored, and may even be an error.
 
-    [if|? 1mm == 1in | will always be true | this is never seen on a card ]
+    [if|? 1mm == 1in, will always be true, this is never seen on a card]
 
 ## Toggle Syntax
 
@@ -154,15 +154,17 @@ Colors use the standard hex code format, a pound sign with 6 or 8 hexadecimal nu
 
 ## List Syntax
 
-A list is multiple values taken as a single value. Lists are surrounded by `(` and `)` and list items are separated by `:`. A list with no inner text is functionally identical to a list containing only the blank macro. If an empty list is needed, CLS recognizes a single `:` as an empty list.
+A list is multiple values taken as a single value. Lists are surrounded by `(` and `)` and list items are separated by `,`. If the last value in a list is blank then it isn't added to the list. If a blank value is needed as the last value, a `,` should be put after it.
 
-    (red: blue: yellow: green: black: white)
-    (12: 345: 2: 56: 76: 23: 4)
+    (red, blue, yellow, green, black, white)
+    (1, 345, 2, 56, 7, 23, 4)
     (a single item)
     ()
+    # empty list
     ([])
-    # those two mean the same thing
-    :
+    # also empty
+    ([],)
+    # this one contains a single blank value
 
 ## Strings
 

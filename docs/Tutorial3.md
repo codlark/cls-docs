@@ -13,31 +13,30 @@ Because it's going to be the first thing the CLS Renderer sees, let's look at in
     layout {
         size: 2.5in, 3.5in
     }
-
     export {
         destination: cards/
         bulk {
-            name: [rank][suit].png
+            name: [suit][rank].png
         }
     }
-
     macros {
-        black = #1a1a5e
         red = #ff1569
+        black = #1a1a5e
         rank = 0
     }
-
     upper-left-index {
         position: 1/8in, 1/8in
         size: .3in, .6in
+        
         number {
             type: text
             size: .3in, .3in
             font: 1/4in, Consolas
-            font-color: [if| [in| [suit] | spade | club ] | [black] | [red] ]
+            font-color: [if| [in| [suit], spade, club], [black], [red]]
             align: center, top
             text: [rank]
         }
+
         pip {
             type: image
             position: center, .3in
@@ -49,14 +48,16 @@ Because it's going to be the first thing the CLS Renderer sees, let's look at in
         position: ^1/8in, ^1/8in
         size: .3in, .6in
         angle: 180
+
         number {
             type: text
             size: .3in, .3in
             font: 1/4in, Consolas
-            font-color: [if| [in| [suit] | spade | club ] | [black] | [red] ]
+            font-color: [if| [in| [suit], spade, club], [black], [red]]
             align: center, top
             text: [rank]
         }
+
         pip {
             type: image
             position: center, .3in
@@ -119,7 +120,7 @@ The ranks do a lot in their layout, so I'm only going to show parts of it
     row1 {
         position: .5in, .5in
         size: 1.5in, .5in
-        draw: [in| [rank]| 8| 9| 10]
+        draw: [in| [rank], 8, 9, 10]
         col1 {
             type: image
         }
@@ -134,17 +135,17 @@ The ranks do a lot in their layout, so I'm only going to show parts of it
         size: 1.5in, .5in
         col1 {
             type: image
-            draw: [in| [rank]| 6]
+            draw: [in| [rank], 6]
         }
         col2 {
             type: image
             x: center
-            draw: [in| [rank]| 3| 5| 7| 9]
+            draw: [in| [rank], 3, 5, 7, 9]
         }
         col3 {
             type: image
             x: ^0
-            draw: [in| [rank]| 6]
+            draw: [in| [rank], 6]
         }
     }
     ...
@@ -152,7 +153,7 @@ The ranks do a lot in their layout, so I'm only going to show parts of it
         position: 0.5in, ^.5in
         size: 1.5in, .5in
         angle: 180
-        draw: [in| [rank]| 8| 9| 10]
+        draw: [in| [rank], 8, 9, 10]
         col1 {
             type: image
         }
@@ -185,7 +186,7 @@ I've shrunk the cards down some, but you can see how the pips get laid out prope
     }
 
     macros {
-        rank = [slice| [royal]| 1| 2]
+        rank = [substr| [royal], 1, 1]
     }
 
     portrait {

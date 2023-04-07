@@ -67,10 +67,10 @@ Elements can also have subelements, which are drawn relative to their parent
 
 ## Macros
 
-Macros feature a name surrounded by square brackets with optional arguments separated by vertical bars.
+Macros are either just a name surrounded by square brackets, or a name followed by a vertical bar for a function macro, with arguments separated by commas.
 
     [column name]
-    [substr| [next column] | 1| 1]
+    [substr| [next column], 1, 1]
 
 Most macros you'll use will likely be column macros or user macros. Macros are evaluated recursively, if a macro returns a macro then that macro will be evaluated too.
 
@@ -124,14 +124,11 @@ A color is one of
 
 ### Lists
 
-Lists are used to treat multiple values as a single value, mostly by macros. Lists are surrounded by parentheses and the items are separated by colons. A single colon is used as an empty list if you need it.
+Lists are used to treat multiple values as a single value, mostly by macros. Lists are surrounded by parentheses and the items are separated by commas.
 
-    (red: blue: yellow)
+    (red, blue, yellow)
     (single item)
     ()
-    ([])
-    #those two are the same thing!!
-    :
     #an empty list
 
 ### Strings
@@ -147,7 +144,7 @@ Escape | Meaning | Escape | Meaning
 `\n` | a new line | `\s` | a space
 `\t` | a tab | `\\` | a literal backslash
 
-The space and tab escapes are useful for putting whitespace at the edge of a value.
+The space and tab escapes are useful for putting whitespace at the edge of a value, where it would otherwise be stripped out by the CLS parser
 
 ## Using the Renderer
 

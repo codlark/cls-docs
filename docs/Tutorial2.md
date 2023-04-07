@@ -35,9 +35,9 @@ Looks good, but there's a problem. Because we put the same size and position in 
             type: text
             size: 100%, 100%
             font: 36pt, Palatino Linotype
-            font-color: [if| [eq| [role] | werewolf ] | [dark-red] | black ]
+            font-color: [if| [eq| [role], werewolf], [dark-red], black]
             align: center, middle
-            text: [capitalize| [role] ]
+            text: [capitalize| [role]]
         }
     }
 
@@ -132,9 +132,9 @@ Finally, here's everything all together.
             type: text
             size: 100%, 100%
             font: 36pt, Palatino Linotype
-            font-color: [if| [eq| [role] | werewolf ] | [dark-red] | black ]
+            font-color: [if| [eq| [role], werewolf], [dark-red], black]
             align: center, middle
-            text: [capitalize| [role] ]
+            text: [capitalize| [role]]
         }
     }
 
