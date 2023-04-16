@@ -43,10 +43,12 @@ All elements share these properties.
 
 ## The `text` Element
  
+ - `text: TEXT` - the text to display. Default value is `[]`.
  - `font-size: FONT-SIZE` - the size of the text. Default value is `18pt`. Unit is one of `pt`, `px`, `in`, `mm`.
  - `font-family: FONT-FAMILY` - the font family to use. Default value is `Verdana`.
  - `font-color: FONT-COLOR` - the color of the text. Default value is `black`.
  - `font: FONT-SIZE, FONT-FAMILY(, FONT-COLOR)` - this is the composite property for the above three properties.
+ - `shrink-font: LENGTH-FONT-SIZE-PAIRS` - a list of pairs that match a length for `text` to a new font size. Pairs are split by `:` colon. `LENGTH` is a number without a unit and `FONT-SIZE` uses the same units as the `font-size` property above. Default value is `()`. See the example below for more information.
  - `h-align: H-ALIGN` - the horizontal alignment of text within the element. Default value is `center`. Allowed values are:
      - `left`
      - `center`
@@ -74,6 +76,16 @@ Because CLS Renderer uses Qt for rendering cards, a subset of HTML is provided f
  - `<img>` places images in the text. When used in conjunction with user macros this is a convenient way to add icons to text
 
 These are only some of the tags available, for a fuller explanation of these and more valid HTML, visit the Qt docs for the [Supported HTML Subset](https://doc.qt.io/qt-6/richtext-html-subset.html)
+
+### `shrink-font` example
+
+The `shrink-font` property is used to create a "shrink to fit" effect. When the text is longer than a given length, the font size is changed to match. Take the example below for a card effect box from a trading card game.
+
+    font-size: 11pt
+    shrink-font: (200: 9pt, 300: 7.5pt)
+    text: [card effect column from data]
+
+In this example, most cards will have a font size of 11pt, but if the length of an effect (minus HTML) is equal to or greater than 200 characters, the font size will be set to 9pt, and similarly with 300 characters and 7.5pt. So if the length of an effect is 256 characters, the font size would be 9pt. These sizes are check in the order they appear in.
 
 
 ## The Image Elements
