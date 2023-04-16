@@ -1,8 +1,6 @@
 # Changelog
 This page collects the changes made to CLS Renderer over time
 
-<<<<<<< Updated upstream
-=======
 ## v1.2
 
 ### added
@@ -24,7 +22,6 @@ This page collects the changes made to CLS Renderer over time
  - Syntax for lists has changed. Values are now separated by commas, as in `(red, red, blue)`
  - lists can now be used with `[switch| ]`. When a list is used as a case value, the macro will check if the test is in the list. Check the docs for more.
 
->>>>>>> Stashed changes
 ## v1.0
 The program has been renamed to CLS Renderer, and briks have been renamed macros.
 
