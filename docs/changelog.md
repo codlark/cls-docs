@@ -1,6 +1,30 @@
 # Changelog
 This page collects the changes made to CLS Renderer over time
 
+<<<<<<< Updated upstream
+=======
+## v1.2
+
+### added
+ - A new `shrink-font` property has been added to `text` elements. This property takes a list of lengths and font sizes, and when the `text` property is longer than a given length, the font size is switched to the given size. See the docs for more info.
+
+### fixed
+ - apparently angle brackets weren't being interp'ed right! So I added proper escapes for them
+ - there was an inconsistency with using `pt` sizes with fonts. they should now scale properly based on your dpi at 72 points to an inch
+ - the docs said that bleed could take a size in `px` but this was raising an error. This no longer raises an error
+
+## v1.1
+
+### added
+ - added back `[substr| ]`, just because it makes more sense for some things.
+
+### changed
+ - Changed the licensing to the Mozilla Public License 2.0
+ - Syntax for macros has been changed. The separator between arguments is now the comma, the vertical bar is still used is separate the function name form the arguments, for example `[eq| [role], werewolf]` from the werewolf example.
+ - Syntax for lists has changed. Values are now separated by commas, as in `(red, red, blue)`
+ - lists can now be used with `[switch| ]`. When a list is used as a case value, the macro will check if the test is in the list. Check the docs for more.
+
+>>>>>>> Stashed changes
 ## v1.0
 The program has been renamed to CLS Renderer, and briks have been renamed macros.
 
