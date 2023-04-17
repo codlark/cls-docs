@@ -190,7 +190,7 @@ A file path is a path to a file or folder in the file system. Properties that ta
 
     source: images/backgrounds/[type].png
 
-# Rendering
+## Rendering
 
 Rendering is the process of turning a parsed layout into cards. If no data is present, only one card will be generated, and the index and total macros will all resolve to `1` or `[]`.
 
