@@ -37,8 +37,6 @@ The expansion macro processes and expands escapes. Normally this is the last ste
 
 Because values are evaluated until there are no more macros, this would end up evaluating a macro with the name of whatever is in `[someMacro]`. Or for a more complex example
 
-    [for-each| (red: blue: yellow) | [/| \[ [item]-icon \] ] ]
+    [for-each| (red, blue, yellow),  [/| \[ [item]-icon \] ] ]
 
 This will return `[ red-icon ][ blue-icon ][ yellow-icon ]`, then these macros would be evaluated.
-
-*[CLS]: Card Layout Script

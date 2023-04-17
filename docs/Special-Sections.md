@@ -17,7 +17,7 @@ The `layout` section follows the standard property-value format.
  - `template: LAYOUT-PATH` - another layout to load in as a template. All properties and sections from the template will be overwritten by this layout. Any elements in the template will be drawn first before any elements defined by this layout.
  - `data: FILE-PATH` - external data table to use, instead of the `data` section. Default value is `[]` which uses the `data` section.
  - `csv: DIALECT` - dialect of csv to use for parsing the data table. Default value is `CLS`. Can be one of: 
-     - `CLS` - the native dialect used by CLS, as described in [Syntax](../Syntax/), which works well for hand written data.
+     - `CLS` - the native dialect used by CLS, as described in [Syntax](./Syntax.md), which works well for hand written data.
      - `excel` - the dialect exported by spread sheet programs like Microsoft Excel and Google Sheets. This is a strict dialect and only recommended when using CSV data exported by another program.
 
 ## The `macros` Section
@@ -62,5 +62,3 @@ The element named `box` will have a line that's 50px wide, dotted, and magenta.
 ## The `data` Section
 
 The `data` section contains the data table, and uses CSV syntax. An alternate data table can be provided with the `data` property of the `layout` section. The dialect used to parse the data table is defined by the `csv` property of the `layout` section.
-
-*[CLS]: Card Layout Script

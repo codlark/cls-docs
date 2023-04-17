@@ -20,7 +20,7 @@ The value ends either at the end of the line or with a semicolon.
 
 The whitespace (spaces and tabs) around names and values is ignored, so that width will be "1/2in" not " 1/2in". Whitespace within values is kept however.
 
-The `macros` and `data` sections have different contents. The `macros` section uses definition syntax, which is just property syntax using equals instead of colons. See the [macros section page](../Special-Sections/#the-macros-section) for more information. The `data` section uses CSV format, with either standard, excel-style syntax or CLS syntax which uses escapes to put commas in values, and ignores headers with no name.
+The `macros` and `data` sections have different contents. The `macros` section uses definition syntax, which is just property syntax using equals instead of colons. See the [macros section page](./Special-Sections.md#the-macros-section) for more information. The `data` section uses CSV format, with either standard, excel-style syntax or CLS syntax which uses escapes to put commas in values, and ignores headers with no name.
 
     macros {
         this-thing = some value I guess??
@@ -67,10 +67,10 @@ Elements can also have subelements, which are drawn relative to their parent
 
 ## Macros
 
-Macros feature a name surrounded by square brackets with optional arguments separated by vertical bars.
+Macros are either just a name surrounded by square brackets, or a name followed by a vertical bar for a function macro, with arguments separated by commas.
 
     [column name]
-    [substr| [next column] | 1| 1]
+    [substr| [next column], 1, 1]
 
 Most macros you'll use will likely be column macros or user macros. Macros are evaluated recursively, if a macro returns a macro then that macro will be evaluated too.
 
@@ -124,14 +124,11 @@ A color is one of
 
 ### Lists
 
-Lists are used to treat multiple values as a single value, mostly by macros. Lists are surrounded by parentheses and the items are separated by colons. A single colon is used as an empty list if you need it.
+Lists are used to treat multiple values as a single value, mostly by macros. Lists are surrounded by parentheses and the items are separated by commas.
 
-    (red: blue: yellow)
+    (red, blue, yellow)
     (single item)
     ()
-    ([])
-    #those two are the same thing!!
-    :
     #an empty list
 
 ### Strings
@@ -147,7 +144,7 @@ Escape | Meaning | Escape | Meaning
 `\n` | a new line | `\s` | a space
 `\t` | a tab | `\\` | a literal backslash
 
-The space and tab escapes are useful for putting whitespace at the edge of a value.
+The space and tab escapes are useful for putting whitespace at the edge of a value, where it would otherwise be stripped out by the CLS parser
 
 ## Using the Renderer
 
@@ -166,5 +163,3 @@ The export button exports the cards according to the export target.
 The clear cache button on the bottom clears the image cache. The CLS Renderer stores any images that are loaded in to keep impact of the file system low. This button clears that storage so that if you change any images in the file system those changes will be seen next time you regenerate the cards.
 
 The card is shown on the left, and on the right is a text box for displaying errors. Errors should be readable but if you have trouble trying to decipher them please ask on the CLS forum, located from the [homepage](https://codlark.itch.io/CLS).
-
-*[CLS]: Card Layout Script

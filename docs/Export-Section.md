@@ -45,5 +45,3 @@ The `tts` subsection is a specialized export target for Tabletop Simulator, whic
  - `size: WIDTH, HEIGHT` - size, in cards, of the generated image. `WIDTH` must be between 2-10 inclusive and `HEIGHT` must be between 2-7 inclusive. Default is `5, 7`; a `WIDTH` of `5` is the max a US poker sized card at 300 dpi can have and keep under the 4096 pixel limit.
 
 If there are more cards than can fit in a single generated image, the CLS Renderer will generate multiple images with a number appended to the front, eg `1cards.png` and `2cards.png`.
-
-*[CLS]: Card Layout Script
