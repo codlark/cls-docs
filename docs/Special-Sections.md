@@ -22,7 +22,7 @@ The `layout` section follows the standard property-value format.
 
 ## The `macros` Section
 
-The `macros` section uses a unique syntax to define user macros, which return their defined value. User macros can either be variable macros or function macros. For example:
+The `macros` section uses a unique syntax to define user macros, which return their defined value. User macros can either be variables or functions. For example:
 
     macros {
         blueish-gray = #8080aa
@@ -38,7 +38,7 @@ Which can be used as
 
     }
 
-When making function macros the arguments passed to the macro are reachable by number as the macros `[1]`, `[2]`, `[3]` and so on. Also available to a function macro is:
+When making functions the arguments passed to the macro are reachable by number as the macros `[1]`, `[2]`, `[3]` and so on. Also available to a function ares:
  
  - `[arg-total]` - the number of arguments passed to the macro
  - `[args]` - all the arguments passed to the macro as a list

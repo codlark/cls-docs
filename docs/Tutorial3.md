@@ -4,7 +4,7 @@ On this page we're going to look at making a deck of playing cards, including jo
 
 ## Deck Structure
 
-Templates are used whenever multiple card layouts use the same or similar properties and elements. In the case of playing cards this mostly means the indexes, but also special sections. Then the aces, ranks, face cards, and jokers each use a separate layout that uses the index layout as a template.
+Templates are used whenever multiple card layouts use the same or similar properties and elements. In the case of playing cards this means the indexes and the special sections. Then the aces, ranks, face cards, and jokers each use a separate layout that uses the index layout as a template.
 
 ## Indexes
 
@@ -75,8 +75,8 @@ Because it's going to be the first thing the CLS Renderer sees, let's look at in
 
 There are actually quite a few design choices in selecting size and position of the indexes, but beyond that
  
- - we define two user macros, `[black]` and `[red]`, set to the colors of the pips, we use these for the font color of the rank
- - a third user macro, `[rank]` is defined and set to 0. This is more of a placeholder on this layout, and will get filled in by each layout
+ - we define two variables, `[black]` and `[red]`, set to the colors of the pips, we use these for the font color of the rank
+ - a third variable, `[rank]` is defined and set to 0. This is more of a placeholder on this layout, and will get filled in by each layout
  - the lower right index uses caret positioning and is rotated, but otherwise is the same as the upper left index
  - the data section only features the suits, this is because we can to replace it on every
 
@@ -100,7 +100,12 @@ The aces are pretty simple because they can inherit so much from the index layou
 
 There really isn't a lot there, is there? We define indexes.cls as our template, set `[rank]` to `A` and place the image. We don't even have to use different data. Let's take a look at this now.
 
-![](./img/aces.png)
+```{image} ./img/aces.png
+```
+
+```{admonition} Where the Images Come From
+As an aside, the art for these cards is pulled from a couple different projects I've worked on in the past. Also, the different size pips are tweaked to look better at their specific size.
+```
 
 ## Ranks
 
@@ -175,7 +180,8 @@ I wasn't kidding when I said this did a lot! We use indexes.cls as a template, b
 
 The pips are were things get interesting. We define them a row at a time, then in each row we name them by column. Then we draw them based on their rank by checking to see if the pip should be seen for this rank. You can see how caret positioning and `center` make it simple to position everything.
 
-![](./img/ranks.png)
+```{image} ./img/ranks.png
+```
 
 I've shrunk the cards down some, but you can see how the pips get laid out properly.
 
@@ -263,8 +269,8 @@ Other than `[rank]`, which is set to the first character of `[royal]`, there isn
 
 The jokers do quite a bit. The big thing is the way they modify the indexes. Because they don't have a true rank and no suit, they don't need the standard index, but the position is still good. So they turn off the pip index and change the number index to show Joker, like so
 
-![](./img/jokers.png)
-
+```{image} ./img/jokers.png
+```
 The way this works is that when you load in a template, the special sections, elements, properties, and data that belong to the template are all put in memory. When the main layout gets loaded, that layout's elements, properties, etc. get put in the exact same place, overwriting anything that's there, and just as importantly, leaving anything that the layout doesn't change untouched. So when jokers.cls changes the `text` property without touching `position`, the `position` set in indexes.cls is kept.
 
 And with that we have a deck of 54 cards and hopefully a better understanding of how templates work.

@@ -1,6 +1,6 @@
 # Selecting Strings
 
-The macros `[slice| ]` and `[substr| ]` look similar but are actually fairly different. `slice` specifies a start and a stop, while `substr` specifies a start and a length.
+The functions `[slice| ]` and `[substr| ]` look similar but are actually fairly different. `slice` specifies a start and a stop, while `substr` specifies a start and a length.
 
     [slice| abcdefg, 2, 4]
 returns "bc"

@@ -64,16 +64,18 @@ The top row of the data is a row of 'headers', these will become the names of co
 
 This example creates three column macros, `[color left]`, `[color center]`, and `[color right]`, and the following four rows.
 
- - "red", "blue", and "yellow"
- - "black",  "", and "white"
- - "",  "purple", and ""
- - "orange",  "green", and ""
+|color left|color center|color right|
+| -------- | ---------- | --------- |
+|"red"| "blue"| "yellow"|
+|"black"|  ""| "white"|
+|""| "purple| ""|
+|"orange" | "green"| ""|
 
-Each row will generate a single card. And for each card, the column macros will resolve to their respective text.
+Each row will generate a single card. And for each card, the column variables will resolve to their respective text.
 
 ## Macro Syntax
 
-Macros come in two varieties, variable macros that return text, and function macros that take arguments to return a computed text. Macros are a name surrounded by square brackets. In function macros a vertical bar is used to separate the name from the arguments, and commas are used to separate the arguments from each other.
+Macros come in two varieties, variables that return text, and functions that take arguments to return a computed text. Macros are a name surrounded by square brackets. In function macros a vertical bar is used to separate the name from the arguments, and commas are used to separate the arguments from each other.
 
     some-element {
         draw: [in| [repeat-index], 1, 2, 4, 6]
@@ -92,7 +94,7 @@ Comments can appear in any section.
 
 Anything provided to a property is considered text until it gets processed at card generation time. Text is turned into a value, depending on how a given property processes this text, each time a card is generated. There are two kinds of values, generated values and literal values.
 
-A generated value is any text that contains macros. This includes column macros. Any macros found are resolved into text. If the text contains macros after this, those macros are resolved. This is repeated until there are no more macros found in the text. The text is then treated as a literal value.
+A generated value is any text that contains macros. This includes column variables. Any macros found are resolved into text. If the text contains macros after this, those macros are resolved. This is repeated until there are no more macros found in the text. The text is then treated as a literal value.
 
 A literal value is text that does not contain macros. This includes special values such as the `center` used by the `position` property. properties belonging to special sections only take literal values, as does the `type` property of elements.
 
@@ -106,7 +108,7 @@ Numbers in CLS are made up of:
      - a decimal point
      - a decimal portion
  - or
-     - a space
+     - a space, decimal point, or slash
      - a fractional portion
  - a unit
 
@@ -130,7 +132,7 @@ Spaces are only allowed in numbers to separate an integer portion from a fractio
     .5
     1/2
 
-When numbers are used as arguments to a macro, be it the math macro, the slice macro, or any other, units are ignored, and may even be an error.
+When numbers are used as arguments to a macro, be it the math macro, the slice function, or any other, units are ignored, and may even be an error.
 
     [if|? 1mm == 1in, will always be true, this is never seen on a card]
 

@@ -17,7 +17,8 @@ So, let's look at a simple border.
 
 Pretty easy! We give it the same position and size as the role element so it fits, and the `corner-radius` property rounds the corners slightly. Just put this **before** the role section and let's take a look
 
-![](./img/overkill.png)
+```{image} ./img/overkill.png
+```
 
 Looks good, but there's a problem. Because we put the same size and position in two places, if we want to move the role we have to change things in two places. We can fix that by putting the elements in a container.
 
@@ -77,7 +78,8 @@ An inverse position is indicated with a caret before the number. In this case th
 
 Let's take a look then we'll go over a few final points.
 
-![](./img/final-check.png)
+```{image} ./img/final-check.png
+```
 
 Neat!
 
@@ -162,6 +164,11 @@ Finally, here's everything all together.
 
 And the cards
 
-![](./img/villager2.png) ![](./img/seer2.png) ![](./img/werewolf2.png)
+```{image} ./img/villager2.png
+```
+```{image} ./img/seer2.png
+```
+```{image} ./img/werewolf2.png
+```
 
 Neat! This final card is included with the CLS Renderer in the example folder, so take a look at that if you haven't been following along.

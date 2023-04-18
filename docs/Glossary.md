@@ -28,6 +28,9 @@ Element
 Expand
 :   To process a value into one that contains no macros or escapes.
 
+Function
+:   A macro that takes arguments. These always compute a return value.
+
 Layout
 :   A template for making Assets. A layout contains data about itself, as well as a number of elements.
 
@@ -46,3 +49,6 @@ Rendering
 Value
 :   The assigned contents of a property. In `width: 1in` the `1in` is a value.
 :   The term value is also used when referring to the data, where it refers to the specific values available as column macros.
+
+Variable
+:   A macro that does not take arguments. These generally do not compute their return value.

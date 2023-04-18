@@ -24,7 +24,7 @@ In this example the `pdf` and `tts` export sections will export cards as `cards.
 ## The `bulk` Export Target
 The `bulk` subsection contains properties for exporting cards to individual images.
 
- - `name: NAME` - the name to use when saving the individual images. If no macros are present in `NAME` the macro `[card-index]` will be added to the front. Default value is `[card-index]card.png`.
+ - `name: NAME` - the name to use when saving the individual images. If no macros are present in `NAME` the variable `[card-index]` will be added to the front. Default value is `[card-index]card.png`.
 
 ## The `pdf` Export Target
 The `pdf` subsection controls the exporting process for PDF files.

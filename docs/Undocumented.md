@@ -1,6 +1,6 @@
 # Undocumented Features
 
-This page is meant to document features that are otherwise undocumented. This page isn't linked to anywhere in the normal documentation, so if you get sent a link, hold onto it.
+This page is meant to document features that are otherwise undocumented. The features on this page aren’t great ideas, in fact a couple might be bad ideas, but I implemented them and I don’t want to get rid of them. Nothing here is going to be documented very well, use at your own risk.
 
 ## text properties
 

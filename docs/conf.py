@@ -56,7 +56,18 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'sphinx_rtd_theme'
+#html_theme = 'sphinx_rtd_theme'
+html_theme = 'furo'
+html_theme_options = {
+    'light_css_variables': {
+        "color-brand-primary": "#783bf3",
+        "color-brand-content": "#783bf3",
+    },
+    'dark_css_variables': {
+        "color-brand-primary": "#783bf3",
+        "color-brand-content": "#783bf3",
+    }
+}
 
 html_favicon = './img/favicon.ico'
 
