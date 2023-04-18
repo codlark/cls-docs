@@ -1,6 +1,5 @@
 # Introduction to Card Layout Script
 
-
 Card Layout Script (CLS) is a language for designing cards. Cards are described as layouts that are rendered by the CLR Renderer.
 
 Use CLS to make cards and things for print-n-play games, prototyping board games, video games, or just to jazz up your favorite TTRPG.
@@ -48,36 +47,41 @@ From there you can export your cards to individual images, a texture image for T
 
 Download the CLR Renderer from the home page at [codlark.itch.io/CLS](https://codlark.itch.io/CLS) then take a look at the [tutorial](./Tutorial.md).
 
-:::{toctree}
+
+```{toctree}
 :caption: Tutorials
 :maxdepth: 2
 :hidden:
+
 Tutorial
 Tutorial2
 Tutorial3
-:::
-:::{toctree}
+```
+```{toctree}
 :caption: Reference
 :maxdepth: 2
 :hidden:
+
 Quick-Ref
 Special-Sections
 Export-Section
 Elements-and-Properties
 Macros
 Glossary
-:::
-:::{toctree}
+```
+```{toctree}
 :caption: Technical Stuff
 :maxdepth: 2
 :hidden:
+
 Syntax
 changelog
-:::
-:::{toctree}
+```
+```{toctree}
 :caption: Links
 :maxdepth: 2
 :hidden:
+
 Home Page <https://codlark.itch.io/cls>
 VS Code Extension <https://marketplace.visualstudio.com/items?itemName=codlark.CLS-vscode>
-:::
+```

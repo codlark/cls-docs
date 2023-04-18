@@ -75,3 +75,14 @@ html_favicon = './img/favicon.ico'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+
+# -- Options for EPUB output -------------------------------------------------
+epub_title = 'CLS docs'
+epub_description = 'Documentation for Card Layout Script'
+epub_author = 'Gia Bamrud'
+epub_copyright = 'copyright 2023, Gia Bamrud'
+epub_uid = 'e24fcdfb-690b-4748-bc34-3d8e4b4d39b3'
+epub_use_index = False
+epub_tocscope = 'includehidden'
+epub_guide = (('toc', 'nav.xhtml', 'Table of Contents'),)
