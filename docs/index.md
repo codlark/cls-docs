@@ -4,17 +4,17 @@ Card Layout Script (CLS) is a language for designing cards. Cards are described 
 
 Use CLS to make cards and things for print-n-play games, prototyping board games, video games, or just to jazz up your favorite TTRPG.
 
-CLS was made because the two main card programs I used both felt lacking. The venerable nanDECK can do most anything, but the arcane syntax and the clinical documentation make it a hard to learn. The WYSIWYG [CardMaker](https://github.com/nhmkdev/cardmaker) is easy to use, but it's limitations felt stifling at times.  So I made a language and renderer that did what I wanted it to, and added some other handy features along the way. Current features
+CLS was made because the two main card programs I used both felt lacking. The venerable nanDECK can do most anything, but the arcane syntax and the clinical documentation make it a hard to learn. The WYSIWYG [CardMaker](https://github.com/nhmkdev/cardmaker) is easy to use, but it's limitations felt stifling at times.  So I made a language and renderer that did what I wanted it to, and added some other handy features along the way. 
 
-  -  CSS-like syntax familiar to most programmers
-  -  Easy to learn and powerful placement system that allows positions to be specified from any direction, and relative to other elements
-  -  Unitized numbers in pixels, inches, millimeters, and more
-  -  Text with complex character support, preliminary testing shows Arabic and Devanagari work but I’d love to hear from people who actually use these alphabets
-  -  Text can be structured and styled with HTML
-  -  Beginner friendly documentation that doesn’t expect you to already know how things work, with handy tutorials
-  -  Layouts can specify other layouts as templates and use their settings and elements, allowing you to make multiple layouts that share features
-  -  A suite of macros that allow you to program your layouts with simple functions like math and string manipulation, and more complex programming with conditions and lists
-  -  Cards can be exported to single images, print ready PDF files, or images for Tabletop Simulator
+Some features of note:
+
+ - Powerful placement system allowing you to locate an item from any edge, easily center things, and position things relative to another, all of which is rotation aware
+ - Units for numbers are built into the syntax, as well as fractions, allowing you to use things like `1/3in` and the renderer knows what you mean
+ - Rich text in the form of HTML, so you can **bold**, *italicize*, and even include images
+ - Images! There's not a lot to this one, but sets of images with different proportions can be positioned to always be in the same spot. And SVG support in on the way
+ - A system of macros that allow you to change any property on any part of a card on a per card basis, with functions for math, string manipulation, and conditions among others
+ - Cards can be exported to PDF for home printing, textures for Table Top Simulator, or individual images
+ - Everything is thoroughly documented, and if something isn't clear enough just ask and I'll gladly clarify
 
 
 ## How it works
