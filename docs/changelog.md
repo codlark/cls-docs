@@ -74,7 +74,7 @@ The program has been renamed to CLS Renderer, and briks have been renamed macros
  - changed: unknown properties are no longer errors
 
 ## v 0.4
- - added: more units! checkout [Values](../Values/) for how they work
+ - added: more units! checkout Values(page removed)) for how they work
  - added: `[slice| STRING | START | STOP]` takes substring of `STRING` like `[substr| ]` but uses start and stop positions instead of a start position and a length
  - added: support for parenthesis to the math brik, infact the whole thing has been rewritten
  - added: pdf export

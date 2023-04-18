@@ -38,7 +38,7 @@ All elements share these properties.
  - `size: WIDTH, HEIGHT` - the size of the element. Both `WIDTH` and `HEIGHT` must be present. Default value for both is `1/4in`. Composite property. Allowed values are any of
      - A number with  units `px`, `in`, or `mm`.
      - A number with unit `%`, which sizes the element relative to its container.
- - `angle: ANGLE` - the rotation of the element in degrees, with or without the unit `deg`. Can be positive which rotates clockwise or negative which rotates counter-clockwise. Elements rotate around there center. If a container is rotated, subelements are positioned according to that rotation. Default value is `0deg`.
+ - `angle: ANGLE` - the rotation of the element in degrees, with or without the unit `deg`. Can be positive which rotates clockwise or negative which rotates counter-clockwise. Elements rotate around their center. If a container is rotated, subelements are positioned according to that rotation. Default value is `0deg`.
  - `draw: TOGGLE` - whether to draw this element, also affects any subelements. Default value is `yes`.
 
 ## The `text` Element
@@ -140,6 +140,3 @@ The `line` type cannot be rotated or given a size, and has two additional proper
 
  - `start: X, Y` - this property is the same as `position`.
  - `end: X2, Y2` - this property defines the end point of the line. Allowed values are the same as for `position`. Composite property. Default value is `1/4in, 1/4in`, which is also the default for `size`.
-
-
-*[CLS]: Card Layout Script

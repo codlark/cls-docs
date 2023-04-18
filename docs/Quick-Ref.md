@@ -12,7 +12,7 @@ Sections are made up of a name with contents surrounded by curly braces, like th
 
 Generally contents are properties. Properties are a name, a colon, and a value
 
-    size: 1in, 1in
+    type: text
 
 The value ends either at the end of the line or with a semicolon.
 
@@ -20,7 +20,11 @@ The value ends either at the end of the line or with a semicolon.
 
 The whitespace (spaces and tabs) around names and values is ignored, so that width will be "1/2in" not " 1/2in". Whitespace within values is kept however.
 
-The `macros` and `data` sections have different contents. The `macros` section uses definition syntax, which is just property syntax using equals instead of colons. See the [macros section page](../Special-Sections/#the-macros-section) for more information. The `data` section uses CSV format, with either standard, excel-style syntax or CLS syntax which uses escapes to put commas in values, and ignores headers with no name.
+Some properties take multiple values, that are separated by commas.
+
+    size: 1in, 1in
+
+The `macros` and `data` sections have different contents. The `macros` section uses definition syntax, which is just property syntax using equals instead of colons. See the [macros section page](./Special-Sections.md#the-macros-section) for more information. The `data` section uses CSV format, with either standard, excel-style syntax or CLS syntax which uses escapes to put commas in values, and ignores headers with no name.
 
     macros {
         this-thing = some value I guess??
@@ -72,7 +76,7 @@ Macros are either just a name surrounded by square brackets, or a name followed 
     [column name]
     [substr| [next column], 1, 1]
 
-Most macros you'll use will likely be column macros or user macros. Macros are evaluated recursively, if a macro returns a macro then that macro will be evaluated too.
+Most macros you'll use will likely be column or user variables. Macros are evaluated recursively, if a macro returns a macro then that macro will be evaluated too.
 
 ## Comments
 
@@ -163,5 +167,3 @@ The export button exports the cards according to the export target.
 The clear cache button on the bottom clears the image cache. The CLS Renderer stores any images that are loaded in to keep impact of the file system low. This button clears that storage so that if you change any images in the file system those changes will be seen next time you regenerate the cards.
 
 The card is shown on the left, and on the right is a text box for displaying errors. Errors should be readable but if you have trouble trying to decipher them please ask on the CLS forum, located from the [homepage](https://codlark.itch.io/CLS).
-
-*[CLS]: Card Layout Script

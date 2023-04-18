@@ -4,7 +4,7 @@ In chapter 1 we looked at a simple layout for a set of cards for Werewolf. This 
 
 ## The Rect Element
 
-CLS offers some limited elements for drawing shapes. We'll be looking at `rect` but there's also `circle` and `line`. Shapes are great for placeholders until you get final graphics, simple layouts, or colorizing transparent images. The color of the shape and the line used to draw the shapes are also fairly flexible, check out the section on [Element Shapes](../Elements-and-Properties/#the-shape-elements) for more.
+CLS offers some limited elements for drawing shapes. We'll be looking at `rect` but there's also `circle` and `line`. Shapes are great for placeholders until you get final graphics, simple layouts, or colorizing transparent images. The color of the shape and the line used to draw the shapes are also fairly flexible, check out the section on [Element Shapes](./Elements-and-Properties.md#the-shape-elements) for more.
 
 So, let's look at a simple border.
 
@@ -17,7 +17,8 @@ So, let's look at a simple border.
 
 Pretty easy! We give it the same position and size as the role element so it fits, and the `corner-radius` property rounds the corners slightly. Just put this **before** the role section and let's take a look
 
-![](./img/overkill.png)
+```{image} ./img/overkill.png
+```
 
 Looks good, but there's a problem. Because we put the same size and position in two places, if we want to move the role we have to change things in two places. We can fix that by putting the elements in a container.
 
@@ -77,7 +78,8 @@ An inverse position is indicated with a caret before the number. In this case th
 
 Let's take a look then we'll go over a few final points.
 
-![](./img/final-check.png)
+```{image} ./img/final-check.png
+```
 
 Neat!
 
@@ -93,7 +95,7 @@ The `defaults` section sets default values for every element in the layout. Any 
 
 ## Image Positioning
 
-Images can be a little weird to position. We have a simple example and our images are about the same size so there isn't much to do. For more complex positioning of images of different sizes, use an `image-box` element. It works like an `image` element, with an added `align` property paired with a defined size to position images within that size. Check it out [here](../Elements-and-Properties/#the-image-elements) to familiarize yourself with it, and how the `image` element works.
+Images can be a little weird to position. We have a simple example and our images are about the same size so there isn't much to do. For more complex positioning of images of different sizes, use an `image-box` element. It works like an `image` element, with an added `align` property paired with a defined size to position images within that size. Check it out [here](./Elements-and-Properties.md#the-image-elements) to familiarize yourself with it, and how the `image` element works.
 
 ## Last Look at the Cards
 
@@ -162,8 +164,11 @@ Finally, here's everything all together.
 
 And the cards
 
-<img src="../img/villager2.png" width=338 height=525 /><img src="../img/seer2.png" width=338 height=525 /><img src="../img/werewolf2.png" width=338 height=525 />
+```{image} ./img/villager2.png
+```
+```{image} ./img/seer2.png
+```
+```{image} ./img/werewolf2.png
+```
 
 Neat! This final card is included with the CLS Renderer in the example folder, so take a look at that if you haven't been following along.
-
-*[CLS]: Card Layout Script

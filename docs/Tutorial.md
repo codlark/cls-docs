@@ -3,8 +3,9 @@ This tutorial will explain the basics of CLS by working through a simple set of 
 
 To get started, download and install the CLS Renderer, and open up your favorite code editor. If you don't already have a favorite code editor, I recommend VS Code, by Microsoft. There's an official language plugin for VS Code that'll make it easier to write layouts, just look for it in the extension marketplace.
 
-!!! Tip
-    If you've never programmed before I recommend typing out each example as we find it. Programming makes use of lots of special characters and it can take time to build the habits for typing them.
+```{tip}
+If you've never programmed before I recommend typing out each example as we find it. Programming makes use of lots of special characters and it can take time to build the habits for typing them.
+```
 
 ## Layout Files
 
@@ -37,17 +38,17 @@ Data is represented as comma separated values, CSV for short.
 
 The first row acts as the names of macros used to reach the data.  The column `repeat` is a special column that causes that row to generate that many cards, so there'll be 2 werewolf cards, 1 seer card, and 4 villager cards.
 
-Data can be represented two ways, the first as the `data` section shown above or as a property of the `layout` section as described [here](../Special-Sections/#the-layout-section). Unlike the other sections, data is not indented.
+Data can be represented two ways, the first as the `data` section shown above or as a property of the `layout` section as described [here](./Special-Sections.md#the-layout-section). Unlike the other sections, data is not indented.
 
 ## The Macros Section
 
-Macros are how values are pulled from the data. They can also modify data, and select values conditionally. The `macros` special section lets us make our own macros, like this color macro.
+Macros are how values are pulled from the data, these are called variables. They can also modify data and select values conditionally, these are called functions. The `macros` special section lets us make our own macros, like this color variable.
 
     macros {
         dark-red = #a32b1d
     }
 
-Notice that macros are defined with an equal sign. You can also make macros that take arguments, which is described in more detail [here](../Special-Sections/#the-macros-section).
+Notice that macros are defined with an equal sign. You can also make your own functions, which is described in more detail [here](./Special-Sections.md#the-macros-section).
 
 Colors in CLS use the standard hex color format, either #RRGGBB or #AARRGGBB if you want transparency. There a hand full of common color names available, such as `black`, `white`, and `transparent`; but outside of these three making your own colors will generally look better. 
 
@@ -89,22 +90,22 @@ These lines position and size the element. We want it centered horizontally and 
 Fractions and decimals are equivalent, some numbers are easier in one or the other, like `1/8` or `0.3`. For this tutorial we'll be using decimals everywhere.
 
         font: 36pt, Palatino Linotype
-        font-color: [if| [eq| [role], werewolf ], [dark-red], black]
+        font-color: [if| [eq| [role], werewolf], [dark-red], black]
         align: center, middle
 
 The `font` property sets the size and name of the font, and optionally the color of the font. For readability I've split the color out. The `align` property positions the text within its defined size. As for that `font-color`, it's our first look at macros and we're gonna take it inside out.
 
     [role]
 
-This is easy, the `[role]` pulls the value of the `role` column for this card/row.
+This is easy, the `[role]` variable pulls the value of the `role` column for this card/row.
 
     [eq| [role], werewolf ]
 
-Macros use vertical bars to separate the name of the function from it's arguments, and commas to separate arguments from each other. Whenever you see a vertical bar in a macro it means it's performing extra computation on it's value. In the case of the `[eq| ]` macro here, if its arguments are the same, it returns (turns into) `true`, or otherwise returns `false`.
+Functions use vertical bars to separate the name of the function from it's arguments, and commas to separate arguments from each other. Whenever you see a vertical bar in a macro it means it's performing extra computation on it's value. In the case of the `[eq| ]` function here, if its arguments are the same, it returns (turns into) `true`, or otherwise returns `false`.
 
     font-color: [if| [eq| [role], werewolf ], [dark-red], black]
 
-This is the whole value. The `[if| ]` macro takes as it's first value a true or false value, called a toggle in CLS, and if it's true it returns the second argument, or the third argument it's false. So this value checks if the role of the current card is `werewolf`, and if it is the font color is made `[dark-red]`, or if it's some other role the font color is made `black`. There are a fair number of macros which are listed [here](../Macros/). 
+This is the whole value. The `[if| ]` functions takes as it's first value a true or false value, called a toggle in CLS, and if it's true it returns the second argument, or the third argument it's false. So this whole thing checks if the role of the current card is `werewolf`, and if it is the font color is made `[dark-red]`, or if it's some other role the font color is made `black`. There are a fair number of macros which are listed [here](./Macros.md). 
 
         text: [capitalize| [role]]
 
@@ -160,7 +161,7 @@ Properties within the `export` section directly change the specified setting for
 
 The `export` section can also have a subsection named for each export target, and the properties in those subsections control that export target only. So in this case the `bulk` export target is set to name each card according to it's role value and `[repeat-index]`, which is the number of times this row has been used to make a card. 
 
-A full exploration of the `export` section can be found [here](../Export-Section/)
+A full exploration of the `export` section can be found [here](./Export-Section.md)
 
 
 ## First Look at the Cards
@@ -187,7 +188,7 @@ Let's take a look at the cards, but first a look at the layout file all together
         position: center, .5in
         size: 1.5in, .25in
         font: 36pt, Palatino Linotype
-        font-color: [if| [eq| [role], werewolf ], [dark-red], black]
+        font-color: [if| [eq| [role], werewolf], [dark-red], black]
         align: center, middle
         text: [capitalize| [role]]
     }
@@ -216,11 +217,16 @@ You'll notice that the sections aren't in the order that we first saw them in! S
 
 So if we open this in the CLS Renderer and click the Export button we'll get a folder named cards with seven cards in it that look like these.
 
-<img src="../img/villager1.png" width=338 height=525 /><img src="../img/seer1.png" width=338 height=525 /><img src="../img/werewolf1.png" width=338 height=525 />
+```{image} ./img/villager1.png
+```
+```{image} ./img/seer1.png
+```
+```{image} ./img/werewolf1.png
+```
 
-!!! note
-    These cards were given a thin border to make it easier to see their size, your cards will not have this border.
+```{note}
+These cards were given a thin border to make it easier to see their size, your cards will not have this border.
+```
 
 Looks pretty good but we make them better. In the next section of this tutorial we'll look at some more elements types and advanced features.
 
-*[CLS]: Card Layout Script

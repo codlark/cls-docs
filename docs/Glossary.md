@@ -2,7 +2,7 @@
 The CLS Renderer has many moving parts and it's important to keep consistent names for things to not get too confused.
 
 Argument
-:   a value passed to a function macro.
+: a value passed to a function macro.
 
 Card
 :   The final rendered object made by the generator, does not need to be an actual card. This could also be a token or board, a character sheet, or something not from the table top game space like a letter or mailer, or a sprite used by a video game.
@@ -28,6 +28,9 @@ Element
 Expand
 :   To process a value into one that contains no macros or escapes.
 
+Function
+:   A macro that takes arguments. These always compute a return value.
+
 Layout
 :   A template for making Assets. A layout contains data about itself, as well as a number of elements.
 
@@ -46,5 +49,6 @@ Rendering
 Value
 :   The assigned contents of a property. In `width: 1in` the `1in` is a value.
 :   The term value is also used when referring to the data, where it refers to the specific values available as column macros.
- 
- *[CLS]: Card Layout Script
+
+Variable
+:   A macro that does not take arguments. These generally do not compute their return value.

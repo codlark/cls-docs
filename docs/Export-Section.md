@@ -24,7 +24,7 @@ In this example the `pdf` and `tts` export sections will export cards as `cards.
 ## The `bulk` Export Target
 The `bulk` subsection contains properties for exporting cards to individual images.
 
- - `name: NAME` - the name to use when saving the individual images. If no macros are present in `NAME` the macro `[card-index]` will be added to the front. Default value is `[card-index]card.png`.
+ - `name: NAME` - the name to use when saving the individual images. If no macros are present in `NAME` the variable `[card-index]` will be added to the front. Default value is `[card-index]card.png`.
 
 ## The `pdf` Export Target
 The `pdf` subsection controls the exporting process for PDF files.
@@ -45,5 +45,3 @@ The `tts` subsection is a specialized export target for Tabletop Simulator, whic
  - `size: WIDTH, HEIGHT` - size, in cards, of the generated image. `WIDTH` must be between 2-10 inclusive and `HEIGHT` must be between 2-7 inclusive. Default is `5, 7`; a `WIDTH` of `5` is the max a US poker sized card at 300 dpi can have and keep under the 4096 pixel limit.
 
 If there are more cards than can fit in a single generated image, the CLS Renderer will generate multiple images with a number appended to the front, eg `1cards.png` and `2cards.png`.
-
-*[CLS]: Card Layout Script
