@@ -25,20 +25,21 @@ Looks good, but there's a problem. Because we put the same size and position in 
     role-container {
         position: center, .5in
         size: 1.5in, .25in
-        
+
         border {
             type: rect
             size: 100%, 100%
             corner-radius: .1in
         }
-        
+
         role {
             type: text
             size: 100%, 100%
-            font: 36pt, Palatino Linotype
+            font: 12pt, Palatino Linotype
             font-color: [if| [eq| [role], werewolf], [dark-red], black]
+            
             align: center, middle
-            text: [capitalize| [role]]
+            text: [capitalize, [role]]
         }
     }
 
@@ -61,8 +62,8 @@ While we're on the subject of positioning, let's talk inverse positions. Normall
     description {
         type: text
         position: center, ^.5in
-        size: 2in, .3in
-        font-family: Palatino Linotype
+        size: 2in, .5in
+        font: 10pt, Palatino Linotype
         align: center, middle
         text: [description]
     }
@@ -87,9 +88,10 @@ Neat!
 
 Because our two text boxes use the same font, we can make use of the `defaults` section.
 
-    defaults {
-        font-family: Palatino Linotype
-    }
+```{literalinclude} layouts/werewolf2.cls
+:language: none
+:lines: 16-18
+```
 
 The `defaults` section sets default values for every element in the layout. Any property can be defined in the `defaults` section, even size and position. This is handy any time multiple elements use the same value and you only want to define it in one spot.
 
@@ -101,66 +103,10 @@ Images can be a little weird to position. We have a simple example and our image
 
 Finally, here's everything all together.
 
-    layout {
-        size: 2.5in, 3.5in
-    }
+```{literalinclude} layouts/werewolf2.cls
+:language: none
+```
 
-    export {
-        destination: cards
-        bulk {
-            name: [role][repeat-index].png
-        }
-    }
-
-    macros {
-        dark-red = #a32b1d
-    }
-
-    defaults {
-        font-family: Palatino Linotype
-    }
-
-    role-container {
-        position: center, .5in
-        size: 1.5in, .25in
-        
-        border {
-            type: rect
-            size: 100%, 100%
-            corner-radius: .1in
-        }
-        
-        role {
-            type: text
-            size: 100%, 100%
-            font: 36pt, Palatino Linotype
-            font-color: [if| [eq| [role], werewolf], [dark-red], black]
-            align: center, middle
-            text: [capitalize| [role]]
-        }
-    }
-
-    icon {
-        type: image
-        position: center, 1in
-        source: images/[role].png
-    }
-
-    description {
-        type: text
-        position: center, ^.5in
-        size: 2in, .3in
-        font-family: Palatino Linotype
-        align: center, middle
-        text: [description]
-    }
-
-    data {
-    repeat, role, description
-    2, werewolf, You may kill one player per night.
-    1, seer, You may find out the role of one player per night.
-    4, villager, You have no abilities.
-    }
 
 And the cards
 
@@ -172,3 +118,8 @@ And the cards
 ```
 
 Neat! This final card is included with the CLS Renderer in the example folder, so take a look at that if you haven't been following along.
+
+
+```{warning}
+The example included with the renderer includes an issue, specifically the font sizes are too big. Until that's fixed, you should copy and paste the code above.
+```

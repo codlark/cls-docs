@@ -24,7 +24,7 @@ role {
     type: text
     position: center, .5in
     size: 1.5in, .25in
-    font: 36pt, Palatino Linotype
+    font: 12pt, Palatino Linotype
     font-color: [if| [eq| [role] | werewolf ] | [dark-red] | black ]
     align: center, middle
     text: [capitalize| [role] ]

@@ -66,7 +66,7 @@ The first thing we should put on a card is the role, so let's look at a text ele
         type: text
         position: center, .5in
         size: 1.5in, .25in
-        font: 36pt, Palatino Linotype
+        font: 12pt, Palatino Linotype
         font-color: [if| [eq| [role], werewolf], [dark-red], black]
         align: center, middle
         text: [capitalize| [role]]
@@ -89,7 +89,7 @@ These lines position and size the element. We want it centered horizontally and 
     
 Fractions and decimals are equivalent, some numbers are easier in one or the other, like `1/8` or `0.3`. For this tutorial we'll be using decimals everywhere.
 
-        font: 36pt, Palatino Linotype
+        font: 12pt, Palatino Linotype
         font-color: [if| [eq| [role], werewolf], [dark-red], black]
         align: center, middle
 
@@ -168,43 +168,9 @@ A full exploration of the `export` section can be found [here](./Export-Section.
 
 Let's take a look at the cards, but first a look at the layout file all together
 
-    layout {
-        size: 2.5in, 3.5in
-    }
-
-    export {
-        destination: cards
-        bulk {
-            name: [role][repeat-index].png
-        }
-    }
-
-    macros {
-        dark-red = #a32b1d
-    }
-
-    role {
-        type: text
-        position: center, .5in
-        size: 1.5in, .25in
-        font: 36pt, Palatino Linotype
-        font-color: [if| [eq| [role], werewolf], [dark-red], black]
-        align: center, middle
-        text: [capitalize| [role]]
-    }
-
-    icon {
-        type: image
-        position: center, 1in
-        source: images/[role].png
-    }
-
-    data {
-    repeat, role
-    2, werewolf
-    1, seer
-    4, villager
-    }
+```{literalinclude} layouts/werewolf1.cls
+:language: none
+```
 
 You'll notice that the sections aren't in the order that we first saw them in! Sections follow a canonical order to make reading layout files easier:
 
@@ -227,6 +193,7 @@ So if we open this in the CLS Renderer and click the Export button we'll get a f
 ```{note}
 These cards were given a thin border to make it easier to see their size, your cards will not have this border.
 ```
+
 
 Looks pretty good but we make them better. In the next section of this tutorial we'll look at some more elements types and advanced features.
 
