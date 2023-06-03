@@ -1,6 +1,24 @@
 # Changelog
 This page collects the changes made to CLS Renderer over time
 
+## NEXT
+
+### added
+ - a new type, `svg`, allowing you to render SVG files, either the whole thing or an item specified by id
+ - a new scale unit for `image`, `dpi`. This unit was added for `svg` elements, but was added to `image` to maintain parity between the two types
+ - a new `font-weight` property has been added to `text` elements. This property takes a number and changes how heavy a font is. This is only needed for some more complete fonts that provide multiple weights like Thin, Light, Normal, Bold, Super Bold. Any value other than `[]` will override the `bold` property.
+ - a new `[not| ]` macro that flips a toggle.
+ - a new `[either| ]` macro that takes two values and returns the first one unless it's a false toggle or an empty string, in which case it returns the second value.
+
+### changed
+ - the default unit for the `scale` property of `image` is now `x`
+
+### fixed
+ - percent sizes of elements contained directly by the layout were being based on the full size of the card with bleed. This has been fixed and is now based on the size of the card as reported to the `size` property of the `layout` element
+
+### removed
+ - the `image-box` type. The provided functionality can be replicated with a container, and quite frankly having two images types is confusing.
+
 ## v1.2
 
 ### added

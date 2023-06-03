@@ -5,8 +5,8 @@
 Elements are the building blocks of a layout. Anything that is seen on a card is an element. These are the available types of elements.
 
  - `text` - This element renders text onto a card. The font family and color can be changed, text can be colorized and decorated (eg underlined), and structured with a subset of HTML
- - `image` - This element is used to quickly draw an image. Images can be resized.
- - `image-box` - This element is used to draw images within a box according to the elements alignment. A more thorough comparison of `image` and `image-box` is below
+ - `image` - This element is used to draw an image. Images can be resized while maintaining aspect ratio.
+ - `svg` - This element is used to render an SVG, either a whole document or an item defined by id.
  - shapes - there are multiple elements for drawing basic shapes.
      - `rect` - a rectangle, with or without rounded corners.
      - `circle` and `ellipse` - both names are used for the same element. A basic circle or ellipse.
@@ -48,6 +48,7 @@ All elements share these properties.
  - `font-family: FONT-FAMILY` - the font family to use. Default value is `Verdana`.
  - `font-color: FONT-COLOR` - the color of the text. Default value is `black`.
  - `font: FONT-SIZE, FONT-FAMILY(, FONT-COLOR)` - this is the composite property for the above three properties.
+ - `font-weight: WEIGHT` - the heaviness of the font, eg `400`, or `100`. Used for fonts with multiple weights. If given the renderer will ignore the `bold` property or a `bold` value given to `decoration`. Default value is `[]`.
  - `shrink-font: LENGTH-FONT-SIZE-PAIRS` - a list of pairs that match a length for `text` to a new font size. Pairs are split by `:` colon. `LENGTH` is a number without a unit and `FONT-SIZE` uses the same units as the `font-size` property above. Default value is `()`. See the example below for more information.
  - `h-align: H-ALIGN` - the horizontal alignment of text within the element. Default value is `center`. Allowed values are:
      - `left`
@@ -88,31 +89,25 @@ The `shrink-font` property is used to create a "shrink to fit" effect. When the 
 In this example, most cards will have a font size of 11pt, but if the length of an effect (minus HTML) is equal to or greater than 200 characters, the font size will be set to 9pt, and similarly with 300 characters and 7.5pt. So if the length of an effect is 256 characters, the font size would be 9pt. These sizes are check in the order they appear in.
 
 
-## The Image Elements
-There are two image element types, `image` and `image-box`, which are suited to different use cases. They both share these properties.
+## The `image` Element
+This type sets the default size to `0, 0`, the actual size the image is drawn is found using the method described below.
 
- - `source: SOURCE-PATH` - the image file to load. Most common file types are recognized, but png is recommended because it's a lossless format. Default value is `[]`, no image.
+ - `source: SOURCE-PATH` - the image file to load. Most common file types are recognized, but png is recommended because it's a lossless format. If the specified image isn't found nothing will be drawn. Default value is `[]`, no image.
  - `keep-ratio: TOGGLE` - whether to keep the image's original aspect ratio when resizing the image. Default value is `yes`.
- - `scale: SCALE-WIDTH(, SCALE-HEIGHT)` - amount to scale image by. Unit one of `%` or `x`. Composite property. Default value is `0` which means no scaling takes place. If `SCALE-HEIGHT` is left off `SCALE-WIDTH` is used for both directions.
+ - `scale: SCALE-WIDTH(, SCALE-HEIGHT)` - amount to scale image by. Unit is one of `x`, `%`, or `dpi`. Composite property. Default value is `1x` which means no scaling takes place. If `SCALE-HEIGHT` is left off `SCALE-WIDTH` is used for both directions.
+     - Values with unit `x` are factors, where `1x` is full size, `.5x` is half size, `2x` is double and so on.
      - Values with unit `%` are percentages, where `100%` is full size, `50%` is half size, `200%` is double and so on.
-     - Values with unit `x` are factors, where `1x` is full size, `.5x` is half size, `2x` is double and so on. This from is useful for scaling an images based on dpi, eg a 600 dpi images on a 300dpi card might use a scale value of `300/600x`
+     - Values with unit `dpi` are dots per inch. Use this unit to specify that an image was drawn at a different dpi than the card is drawn at. For example, the default card dpi is 300, but artists will commonly draw at 600, so specifying `600dpi` will cause the image to be drawn so it takes up the same real world space.
 
-The `image` type is intended for cases where the same image will be used on every card, or where every image is the same size. This type sets the default size to `0, 0`. The final size to render an image is found with the series of checks below.
- 1. If the size is left at the default, and `scale` is left at default, the image is drawn at full size. This is the default behavior.
- 2. If the size is left at default and `scale` is provided, the image is scaled based on the provided value and according to `keep-ratio` when drawn.
+The final size to render an image is found with the series of checks below.
+ 1. If the size and scale are unspecified, the image is drawn at full size. This is the default behavior.
+ 2. If the size is unspecified but `scale` is provided, the image is scaled based on the provided value and according to `keep-ratio` when drawn.
  3. If the size is specified in only one direction the image is scaled based on that direction while maintaining the aspect ratio when drawn.
  4. If both width and height are specified, the image is scaled to that size according to `keep-ratio` when drawn.
 
-The `image-box` type is intended for cases when images are different sizes, and provides the property:
-
- - `align: H-ALIGN(, V-ALIGN)` - this property takes the same values as the `align` property above. Default value is `center, middle`.
-
-The `image-box` type uses a different drawing process than `image`
- 
- 1. If `scale` is provided then the images will be scaled according to `keep-ratio`.
- 2. If the image is larger than the element size, it will be scaled to fit according to `keep-ratio`
- 3. The image is  located within the size of the element based on the `align` property and drawn.
-
+## The `svg` Element
+Everything said about `image` above is true for `svg`, however it adds one more property.
+ - `id: ID` - an id of a specific element in the SVG document. Default value is `[]`, which draws the entire document.
 
 ## The Shape Elements
 CLS provides basic shapes. While mainly intended to assist in development of layouts, these may also be used, for example, to provide borders in more simple layouts, or to colorize transparent images.
