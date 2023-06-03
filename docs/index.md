@@ -56,6 +56,7 @@ Download the CLR Renderer from the home page at [codlark.itch.io/CLS](https://co
 Tutorial
 Tutorial2
 Tutorial3
+Tutorial4
 ```
 ```{toctree}
 :caption: Reference
