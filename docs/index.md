@@ -4,7 +4,7 @@ Card Layout Script (CLS) is a language for designing cards. Cards are described 
 
 Use CLS to make cards and things for print-n-play games, prototyping board games, video games, or just to jazz up your favorite TTRPG.
 
-CLS was made because the two main card programs I used both felt lacking. The venerable nanDECK can do most anything, but the arcane syntax and the clinical documentation make it a hard to learn. The WYSIWYG [CardMaker](https://github.com/nhmkdev/cardmaker) is easy to use, but it's limitations felt stifling at times.  So I made a language and renderer that did what I wanted it to, and added some other handy features along the way. 
+CLS was made because the two main card programs I used both felt lacking. The venerable nanDECK can do most anything, but the opaque syntax and the clinical documentation make it a hard to learn. The WYSIWYG [CardMaker](https://github.com/nhmkdev/cardmaker) is easy to use, but it's limitations felt stifling at times.  So I made a language and renderer that did what I wanted it to, and added some other handy features along the way. 
 
 Some features of note:
 
