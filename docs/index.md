@@ -11,7 +11,7 @@ Some features of note:
  - Powerful placement system allowing you to locate an item from any edge, easily center things, and position things relative to another, all of which is rotation aware
  - Units for numbers are built into the syntax, as well as fractions, allowing you to use things like `1/3in` and the renderer knows what you mean
  - Rich text in the form of HTML, so you can **bold**, *italicize*, and even include images
- - Images! There's not a lot to this one, but sets of images with different proportions can be positioned to always be in the same spot. And SVG support in on the way
+ - Image and SVG support, the latter allowing you to specify specific items instead of the whole document
  - A system of macros that allow you to change any property on any part of a card on a per card basis, with functions for math, string manipulation, and conditions among others
  - Cards can be exported to PDF for home printing, textures for Table Top Simulator, or individual images
  - Everything is thoroughly documented, and if something isn't clear enough just ask and I'll gladly clarify
@@ -56,6 +56,7 @@ Download the CLR Renderer from the home page at [codlark.itch.io/CLS](https://co
 Tutorial
 Tutorial2
 Tutorial3
+Tutorial4
 ```
 ```{toctree}
 :caption: Reference
@@ -68,6 +69,7 @@ Export-Section
 Elements-and-Properties
 Macros
 Glossary
+FAQ
 ```
 ```{toctree}
 :caption: Technical Stuff

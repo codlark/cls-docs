@@ -1,4 +1,4 @@
-# Looking at - Playing Cards
+# Example - Playing Cards
 
 On this page we're going to look at making a deck of playing cards, including jokers. We'll look at when to use templates, and how to use them. This guide  is less a tutorial, and more of a walkthrough. Just like with the Werewolf example before, all the images used and layout files are provided with CLS.
 

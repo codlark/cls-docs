@@ -88,6 +88,9 @@ Convert the entirety of `STRING` to uppercase.
 
 Comparison functions compare values and return a toggle for the `[if| ]` macro, which is also described here
 
+`[either| LEFT, RIGHT]`\
+Returns `LEFT` if it is a true value, such as `on` or any string, or `RIGHT` if `LEFT` is false, such as `[]`. This function can be used in user functions to provide default values, such as `[either| [1], some value]`, where if the user doesn't provide a value, `some value` will be used instead.
+
 `[eq| LEFT, RIGHT]`\
 Test if `LEFT` and `RIGHT` are equal. The arguments can be any type of value, but are compared as strings so `[eq| 3in, 3]` would return `false`.
 
@@ -102,6 +105,9 @@ Test to see if `VALUE` is in `LIST`. If more arguments are provided this macro w
 
 `[ne| LEFT, RIGHT]`\
 Test if `LEFT` and `RIGHT` are not equal. The arguments can be any type of value, but are compared as strings so `[ne| 3in, 3]` would return `true`.
+
+`[not| TOGGLE]`\
+Flips `TOGGLE`, that is, if `TOGGLE` is a false value, like `off` or `[]`, then it returns `true`, otherwise returns `false`.
 
 `[switch| TEST, CASE, MATCH...]`\
 `[switch| TEST, CASE, MATCH..., default, DEFAULT-MATCH]`\
