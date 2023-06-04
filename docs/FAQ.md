@@ -15,9 +15,6 @@ If you're in the middle of a project and you're happy with what you're using, th
 
 CLS is still young and fairly untested. Most other card designers will have more features and be less likely to have bugs, but I'm actively working on making CLS stable and featureful.
 
-## What about nanDECK?
-You're free to keep using it. I didn't care for it when I went to use it which was a major push to make my own card designer.
-
 ## I think I found a bug!
 Very possible! The best way to tell me is to make a post on the forum located on the [home page](https://codlark.itch.io/cls), but if you don't want to make an account for that, you can email me at codlark (at) gmail (dot) com with "CLS BUG" in the subject and I'll double check the bug and make the post for you.
 
