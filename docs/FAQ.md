@@ -1,6 +1,6 @@
 # FAQs
 
-Okay, so realistically 
+Okay, so realistically most of these have been asked once at the most, but "Potentially Asked Questions" doesn't sound as good.
 
 ## So what is CLS?
 It's a programming language used to describe card layouts. The renderer combines layouts with data in CSV format to make cards. The driving goal is to make a simple to use, easy to read language that make the simple stuff easy and the hard stuff possible.
